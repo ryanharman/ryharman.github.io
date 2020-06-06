@@ -1,8 +1,3 @@
-/* 
-https://colorhunt.co/palette/2763
-https://www.youtube.com/watch?v=ZZOlqX_772k
-*/
-
 *{
     margin: 0;
     padding: 0;
@@ -32,18 +27,21 @@ html {
 }
 
 .container {
-    padding: 0 100px 0 100px;
+    padding: 0 150px;
 }
 
-nav ul,
-.main-info {
+nav ul {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 body {
     background-color: var(--bg-color);
+    line-height: 1.3;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
 }
 
 header {
@@ -53,24 +51,19 @@ header {
     padding: 20px 0;
 }
 
-.navbar {
-    background-color: var(--heading-color);
-}
-
 header h1,
 header a,
-.text p,
 .about h1,
 .skills h1 {
     color: var(--font-color);
 }
 
-li {
+.navbar li {
     list-style: none;
     margin-left: 30px;
 }
 
-a {
+.navbar a {
     text-decoration: none;
     text-transform: uppercase;
     position: relative;
@@ -78,27 +71,76 @@ a {
     bottom: 50%;
     transform: translateY(-50%);
     font-size: .9rem;
+    transition: all .5s;
+}
+
+.navbar a:hover {
+    color: var(--secondary-color);
+    transition: all .5s;
 }
 
 .main-info {
     height: calc(100vh - 81.6px);
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: left;
+    max-width: 1000px;
     /* background-image: url("DcLLNW6.gif");
     background-repeat: no-repeat;
     background-size: cover; */
 }
-
 .text {
-    margin-top: 120px;
+    margin: 75px 0;
 }
-
 .text h1 {
-    color: var(--secondary-color);
-    font-size: 2.5rem;
     cursor: context-menu;
 }
 
-.workplace {
-    font-size: 2.8rem;
+.hello {
+    color: var(--font-color);
+    font-size: 1.5rem;
+}
+
+.name {
+    color: var(--font-color);
+    font-size: 4rem;
+}
+
+.intro {
+    color: var(--font-color);
+    margin-top: 50px;
+    font-size: 1.5rem;
+    max-width: 500px;
+}
+
+.button {
+    display: block;
+}
+
+.button a {
+    padding: 0px;
+    width: 150px;
+    height: 50px;
+    line-height: 50px;
+    border: var(--secondary-color) solid 1px;
+    border-radius: 3px;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    color: var(--secondary-color);
+    font-size: 1.2rem;
+    font-weight: bold;
+    display: inline-block;
+    position: relative;
+    transition: all .5s;
+}
+
+.button a:hover {
+    color: var(--font-color);
+    transition: all .5s;
+    background-color: rgba(1,135,134,0.1);
 }
 
 .text span {
@@ -115,28 +157,25 @@ span:hover {
     transition: all .5s;
 }
 
-.text p {
+.what-this {
     letter-spacing: 3px;
     word-spacing: 10px;
     font-size: .8rem;
     color: var(--alt-font-color);
-}
-
-.main-img {
-    margin-top: 120px;
-    margin-right: 50px;
+    margin-top: 10px;
 }
 
 .about {
-    height: 100vh;
-    margin-top: 100px;
+    display: flex;
+    min-height: 75vh;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 
 .about h1,
 .skills h1 {
-    font-size: 8rem;
-    z-index: 0;
-    opacity: .1;
+    font-size: 4rem;
     transition: all 1s;
 }
 
@@ -149,37 +188,43 @@ span:hover {
 
 .about-me {
     max-width: 900px;
-    background-color: var(--secondary-color);
-    box-shadow: 0 0 1.2rem rgba(0,0,0,.25);
     padding: 50px;
-    position: relative;
-    top: -70px;
-    left: 50%;
-    right: 50%;
-    transform: translateX(-50%);
-    z-index: 1;
     color: #eeeeee;
+    margin-top: 150px;
+    margin-bottom: auto;
 }
 
-.about-me p:nth-child(2),
-.about-me p:last-child  {
-    margin-top: 30px;
+.about-me p {
+    margin-top: 25px;
 }
 
-.skills {
-    height: 100vh;
+footer {
+    height: 50px;
+    text-align: center;
 }
 
-.skills-info {
-    max-width: 900px;
-    background-color: var(--secondary-color);
-    box-shadow: 0 0 1.2rem rgba(0,0,0,.25);
-    padding: 50px;
-    position: relative;
-    top: -70px;
-    left: 50%;
-    right: 50%;
-    transform: translateX(-50%);
-    z-index: 1;
-    color: #eeeeee;
+footer p {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    color: var(--font-color);
 }
+
+.footer {
+    flex: 0 100%;
+    text-align: center;
+    margin-top: auto;
+}
+
+.fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 75px;
+    text-decoration: none;
+    display:inline-block;
+    bottom: 10px;
+    color: var(--font-color)
+  }
+  
+  .fa:hover {
+    opacity: 0.7;
+  }
