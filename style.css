@@ -253,8 +253,8 @@ ABOUT SECTION
 .image-me {
     border-radius: 5%;
     border: var(--font-color) 1px solid;
-    width: 350px;
-    height: 250px;
+    width: 600px;
+    height: 400px;
     transition: all 0.5s;
 }
 
