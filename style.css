@@ -209,10 +209,10 @@ ABOUT SECTION
 .about {
     display: flex;
     min-height: 75vh;
-    margin: 0 auto;
     justify-content: center;
     flex-direction: row;
     align-items: left;
+    border: red solid;
 }
 
 .about h1,
@@ -232,8 +232,14 @@ ABOUT SECTION
     max-width: 750px;
     padding: 50px;
     color: #eeeeee;
-    margin-top: 100px;
-    margin-bottom: auto;
+    margin: auto;
+}
+
+.about-me a {
+    position: relative;
+    text-decoration: none;
+    color: var(--font-color);
+    font-weight: bold;
 }
 
 .about-me p {
@@ -242,13 +248,13 @@ ABOUT SECTION
 
 .image-wrapper {
     padding: 50px;
-    margin-top: 100px;
+    margin: auto;
 }
 
 .image-me {
-    border-radius: 50%;
+    border-radius: 5%;
     border: var(--font-color) 1px solid;
-    width: 250px;
+    width: 350px;
     height: 250px;
     transition: all 0.5s;
 }
