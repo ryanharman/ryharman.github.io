@@ -1,6 +1,7 @@
 /* 
 https://colorhunt.co/palette/2763
 https://www.youtube.com/watch?v=ZZOlqX_772k
+https://brittanychiang.com/
 */
 
 * {
@@ -76,8 +77,7 @@ header {
 
 header h1,
 header a,
-.about h1,
-.skills h1 {
+.about h1 {
     color: var(--font-color);
 }
 
@@ -112,15 +112,17 @@ MAIN SECTION
     display: flex;
     justify-content: center;
     flex-direction: column;
-    align-items: left;
+    align-items: center;
     max-width: 1000px;
-    /* background-image: url("DcLLNW6.gif");
+    /* background-image: url("maxwell-nelson-taiuG8CPKAQ-unsplash.jpg");
     background-repeat: no-repeat;
     background-size: cover; */
 }
+
 .text {
     margin: 75px 0;
 }
+
 .text h1 {
     cursor: context-menu;
 }
@@ -209,9 +211,8 @@ ABOUT SECTION
     min-height: 75vh;
     margin: 0 auto;
     justify-content: center;
-    flex-direction: column;
+    flex-direction: row;
     align-items: left;
-    max-width: 1000px;
 }
 
 .about h1,
@@ -228,7 +229,7 @@ ABOUT SECTION
 }
 
 .about-me {
-    max-width: 900px;
+    max-width: 750px;
     padding: 50px;
     color: #eeeeee;
     margin-top: 100px;
@@ -238,6 +239,28 @@ ABOUT SECTION
 .about-me p {
     margin-top: 25px;
 }
+
+.image-wrapper {
+    padding: 50px;
+    margin-top: 100px;
+}
+
+.image-me {
+    border-radius: 50%;
+    border: var(--font-color) 1px solid;
+    width: 250px;
+    height: 250px;
+    transition: all 0.5s;
+}
+
+.image-me:hover {
+    border: var(--secondary-color) 1px solid;
+    transition: all 0.5s;
+}
+
+/* 
+FOOTER SECTION
+*/
 
 footer {
     height: 50px;
@@ -250,10 +273,6 @@ footer p {
     color: var(--font-color);
 }
 
-/* 
-FOOTER SECTION
-*/
-
 .footer {
     flex: 0 100%;
     text-align: center;
@@ -263,13 +282,17 @@ FOOTER SECTION
 .fa {
     padding: 20px;
     font-size: 30px;
-    width: 75px;
+    width: 50x;
     text-decoration: none;
     display:inline-block;
     bottom: 10px;
-    color: var(--font-color)
+    color: var(--font-color);
+    border-bottom: white 1px solid;
+    transition: all 0.5s;
   }
   
   .fa:hover {
     opacity: 0.7;
+    border-bottom: var(--secondary-color) 1px solid;
+    transition: all 0.5s;
   }
