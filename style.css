@@ -212,7 +212,6 @@ ABOUT SECTION
     justify-content: center;
     flex-direction: row;
     align-items: left;
-    border: red solid;
 }
 
 .about h1,
