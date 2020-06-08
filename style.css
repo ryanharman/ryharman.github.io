@@ -54,7 +54,7 @@ body {
 }
 
 /* 
-LOAD ANIMATION SECTION
+ANIMATION SECTION
  */
 
 .item {
@@ -81,6 +81,14 @@ LOAD ANIMATION SECTION
     animation: fadein 5s;   
 }
 
+.item4 {
+    -webkit-animation: fadein 7s; /* Safari, Chrome and Opera > 12.1 */
+    -moz-animation: fadein 7s; /* Firefox < 16 */
+    -ms-animation: fadein 7; /* Internet Explorer */
+    -o-animation: fadein 7s; /* Opera < 12.1 */
+    animation: fadein 7s;   
+}
+
 @keyframes fadein {
     from { opacity: 0; }
     to   { opacity: 1; }
@@ -104,6 +112,82 @@ LOAD ANIMATION SECTION
 @-o-keyframes fadein {
     from { opacity: 0; }
     to   { opacity: 1; }
+}
+
+@-webkit-keyframes color-change {
+    0% { color: #fff; }
+    50% { color: #018786; }
+    100% { color: #fff; }
+}
+@-moz-keyframes color-change {
+    0% { color: #fff; }
+    50% { color: #018786; }
+    100% { color: #fff; }
+}
+@-ms-keyframes color-change {
+    0% { color: #fff; }
+    50% { color: #018786; }
+    100% { color: #fff; }
+}
+@-o-keyframes color-change {
+    0% { color: #fff; }
+    50% { color: #018786; }
+    100% { color: #fff; }
+}
+@keyframes color-change {
+    0% { color: #fff; }
+    50% { color: #018786; }
+    100% { color: #fff; }
+}
+
+.r {
+    animation: color-change 5s;
+    animation-delay: 3s;
+}
+
+.y {
+    animation: color-change 5s;
+    animation-delay: 3.5s;
+}
+
+.a {
+    animation: color-change 5s; 
+    animation-delay: 4s; 
+}
+
+.n {
+    animation: color-change 5s;
+    animation-delay: 4.5s;
+}
+
+.h {
+    animation: color-change 5s;
+    animation-delay: 5s;
+}
+
+.a2 {
+    animation: color-change 5s;
+    animation-delay: 5.5s;
+}
+
+.r2 {
+    animation: color-change 5s;
+    animation-delay: 6s;
+}
+
+.m {
+    animation: color-change 5s;
+    animation-delay: 6.5s;
+}
+
+.a3 {
+    animation: color-change 5s;
+    animation-delay: 7s;
+}
+
+.n2 {
+    animation: color-change 5s;
+    animation-delay: 7.5s;
 }
 
 /* 
@@ -343,6 +427,7 @@ footer p {
 MEDIA QUERIES
 */
 
+/* Phone screen up to tablet */
 @media only screen and (min-width: 320px) and (max-width: 767px) {
     .container {
         padding: 0px;
@@ -352,12 +437,17 @@ MEDIA QUERIES
     header {
         flex-direction: row;
         justify-content: space-between;
-        align-items: left;
+        align-items: center;
         padding-left: 20px;
+        padding-right: 20px;
     }
 
-    .navbar li {
-        margin-right: 20px;
+    nav {
+        padding-bottom: 16px;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
     }
 
     .about-list {
@@ -366,6 +456,18 @@ MEDIA QUERIES
 
     .main-info {
         padding: 0 50px;
+
+    }
+
+    .name {
+        font-size: 3rem;
+    }
+
+    .image-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0px 50px 50px 50px;
     }
 
     .image-me {
@@ -381,6 +483,7 @@ MEDIA QUERIES
     }
 }
 
+/* Tablet to desktop */
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
     .container {
         padding: 0 50px;
@@ -388,6 +491,13 @@ MEDIA QUERIES
 
     .main-info {
         padding: 0 50px;
+    }
+
+    .image-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 25px 50px 50px 50px;
     }
 
     .image-me {
