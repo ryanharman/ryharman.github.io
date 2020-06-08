@@ -24,7 +24,7 @@ html {
     --font-color: #e1e1ff;
     --bg-color: #161625;
     --heading-color: #818cab;
-}
+} 
 
 /* 
 OTHER SETUP
@@ -339,3 +339,23 @@ footer p {
     border-bottom: var(--secondary-color) 1px solid;
     transition: all 0.5s;
   }
+
+/* 
+MEDIA QUERIES
+*/
+
+@media only screen and (min-width: 320px) and (max-width: 479px) {
+
+}
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+}
+
+@media only screen and (min-width: 992px) {
+    
+}
