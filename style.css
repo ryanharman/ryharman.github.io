@@ -291,7 +291,6 @@ ABOUT SECTION
 .image-me {
     border-radius: 5%;
     border: var(--font-color) 1px solid;
-    width: 600px;
     height: 400px;
     transition: all 0.5s;
 }
@@ -345,7 +344,37 @@ MEDIA QUERIES
 */
 
 @media only screen and (min-width: 320px) and (max-width: 479px) {
+    .container {
+        padding: 0px;
+    }
 
+    header {
+        flex-direction: column;
+        justify-content: left;
+        align-items: left;
+        padding-left: 20px;
+    }
+
+    nav {
+        display: flex;
+    }
+
+    .navbar li {
+        margin: 10px 0 0 0;
+        flex: 0 100%;
+    }
+
+    .main-info {
+        padding: 0 50px;
+    }
+
+    .image-me {
+        height: 200px
+    }
+
+    .about {
+        flex-direction: column;
+    }
 }
 
 @media only screen and (min-width: 480px) and (max-width: 767px) {
@@ -357,5 +386,5 @@ MEDIA QUERIES
 }
 
 @media only screen and (min-width: 992px) {
-    
+
 }
