@@ -328,6 +328,8 @@ MAIN SECTION
 }
 
 .scroll-arrow {
+    display: flex;
+    justify-content: center;
     height: 10px;
     margin-top: 150px;
 }
@@ -688,6 +690,11 @@ MEDIA QUERIES
         font-size: 3rem;
     }
 
+    .scroll-arrow {
+        margin-top: 15px;
+    }
+    
+
     .image-wrapper {
         display: flex;
         align-items: center;
@@ -706,6 +713,10 @@ MEDIA QUERIES
     .about h1 {
         font-size: 2rem;
     }
+
+    .slider__txt {
+        padding: 0px 10px;
+      }
 }
 
 /* Tablet to desktop */
