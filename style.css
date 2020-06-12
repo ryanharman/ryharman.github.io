@@ -466,7 +466,7 @@ CAROUSEL SECTION
 
 
 .slider {
-    height: 225px;
+    height: 275px;
     margin: 25px 0;
     position: relative;
     overflow: hidden;
@@ -475,16 +475,16 @@ CAROUSEL SECTION
     display: -ms-flexbox;
     display: flex;
     -webkit-flex-flow: row nowrap;
-        -ms-flex-flow: row nowrap;
-            flex-flow: row nowrap;
+    -ms-flex-flow: row nowrap;
+    flex-flow: row nowrap;
     -webkit-box-align: end;
     -webkit-align-items: flex-end;
-        -ms-flex-align: end;
-            align-items: flex-end;
+    -ms-flex-align: end;
+    align-items: flex-end;
     -webkit-box-pack: center;
     -webkit-justify-content: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
   }
 
   .slider__nav {
@@ -583,6 +583,7 @@ CAROUSEL SECTION
     color: var(--font-color);
     margin-bottom: 1rem;
     max-width: 500px;
+    font-size: 1.1rem;
   }
   
   @-webkit-keyframes check {
