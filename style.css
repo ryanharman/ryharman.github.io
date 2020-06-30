@@ -715,6 +715,10 @@ MEDIA QUERIES
         font-size: 2rem;
     }
 
+    .slider {
+        height: 335px;
+    }
+
     .slider__txt {
         padding: 0px 10px;
       }
