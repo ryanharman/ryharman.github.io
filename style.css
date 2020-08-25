@@ -190,6 +190,19 @@ ANIMATION SECTION
     animation-delay: 7.5s;
 }
 
+/* Fade in on view */
+@keyframes fade-in {
+    from {opacity: 0; transform: scale(.7,.7)}
+    to {opacity: 1;}
+}
+.fade-in-element {
+  animation: fade-in 1.4s;
+}
+
+.hidden {
+    opacity: 0;
+}
+
 /* 
 HEADER SECTION
 */
@@ -244,6 +257,7 @@ MAIN SECTION
     background-repeat: no-repeat;
     background-size: cover; */
 }
+
 .text {
     margin: 75px 0;
 }
@@ -463,7 +477,6 @@ CAROUSEL SECTION
     opacity: 1;
     transition: all 1s;
 }
-
 
 .slider {
     height: 275px;
@@ -695,7 +708,6 @@ MEDIA QUERIES
         margin-top: 15px;
     }
     
-
     .image-wrapper {
         display: flex;
         align-items: center;
