@@ -45,7 +45,7 @@ const animateHTML = function() {
 // For collecting book image, title and link using Google Books API
 function getBooks() {
   const bookIds = getBookIds();
-  console.log(bookIds);
+  // console.log(bookIds);
 
   // Iterates over the Id's returned to return book information
   bookIds.forEach(bookId => {
@@ -57,7 +57,7 @@ function getBooks() {
 
 function getBookIds() {
   const findBooks = document.getElementsByClassName('book');
-  console.log(findBooks);
+  // console.log(findBooks);
   let values = [];
   // Loop returns the book ID stored in the element
   for (let item of findBooks) {
@@ -74,7 +74,7 @@ function fetchBookData(bookId) {
 
 function addBook(bookData) {
   const el = document.querySelectorAll('*[data-book-id="' + bookData.id + '"]');
-  console.log(el);
+  // console.log(el);
   el[0].outerHTML = '<div data-book-id="' + bookData.id + '" class="book hover"><a target="blank" href="' + bookData.volumeInfo.infoLink + '"><img src="' + bookData.volumeInfo.imageLinks.thumbnail + '" alt="' + bookData.volumeInfo.title + '"></a></div>';
-  console.log(bookData);
+  // console.log(bookData);
 };

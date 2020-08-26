@@ -57,38 +57,6 @@ body {
 ANIMATION SECTION
  */
 
-.item {
-    -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
-    -moz-animation: fadein 2s; /* Firefox < 16 */
-    -ms-animation: fadein 2s; /* Internet Explorer */
-    -o-animation: fadein 2s; /* Opera < 12.1 */
-    animation: fadein 2s;
-}
-
-.item2 {
-    -webkit-animation: fadein 3s; /* Safari, Chrome and Opera > 12.1 */
-    -moz-animation: fadein 3s; /* Firefox < 16 */
-    -ms-animation: fadein 3s; /* Internet Explorer */
-    -o-animation: fadein 3s; /* Opera < 12.1 */
-    animation: fadein 3s;
-}
-
-.item3 {
-    -webkit-animation: fadein 5s; /* Safari, Chrome and Opera > 12.1 */
-    -moz-animation: fadein 5s; /* Firefox < 16 */
-    -ms-animation: fadein 5; /* Internet Explorer */
-    -o-animation: fadein 5s; /* Opera < 12.1 */
-    animation: fadein 5s;   
-}
-
-.item4 {
-    -webkit-animation: fadein 7s; /* Safari, Chrome and Opera > 12.1 */
-    -moz-animation: fadein 7s; /* Firefox < 16 */
-    -ms-animation: fadein 7; /* Internet Explorer */
-    -o-animation: fadein 7s; /* Opera < 12.1 */
-    animation: fadein 7s;   
-}
-
 @keyframes fadein {
     from { opacity: 0; }
     to   { opacity: 1; }
@@ -116,87 +84,102 @@ ANIMATION SECTION
 
 @-webkit-keyframes color-change {
     0% { color: #fff; }
-    50% { color: #018786; }
+    15% { color: #018786; }
+    80% { color: #fff; }
     100% { color: #fff; }
 }
 @-moz-keyframes color-change {
     0% { color: #fff; }
-    50% { color: #018786; }
+    15% { color: #018786; }
+    80% { color: #fff; }
     100% { color: #fff; }
 }
 @-ms-keyframes color-change {
     0% { color: #fff; }
-    50% { color: #018786; }
+    15% { color: #018786; }
+    80% { color: #fff; }
     100% { color: #fff; }
 }
 @-o-keyframes color-change {
     0% { color: #fff; }
-    50% { color: #018786; }
+    15% { color: #018786; }
+    80% { color: #fff; }
     100% { color: #fff; }
 }
 @keyframes color-change {
     0% { color: #fff; }
-    50% { color: #018786; }
+    15% { color: #018786; }
+    80% { color: #fff; }
     100% { color: #fff; }
 }
 
 .r {
-    animation: color-change 5s;
+    animation: color-change 15s;
     animation-delay: 3s;
+    animation-iteration-count: infinite;
 }
 
 .y {
-    animation: color-change 5s;
+    animation: color-change 15s;
     animation-delay: 3.5s;
+    animation-iteration-count: infinite;
 }
 
 .a {
-    animation: color-change 5s; 
+    animation: color-change 15s; 
     animation-delay: 4s; 
+    animation-iteration-count: infinite;
 }
 
 .n {
-    animation: color-change 5s;
+    animation: color-change 15s;
     animation-delay: 4.5s;
+    animation-iteration-count: infinite;
 }
 
 .h {
-    animation: color-change 5s;
+    animation: color-change 15s;
     animation-delay: 5s;
+    animation-iteration-count: infinite;
 }
 
 .a2 {
-    animation: color-change 5s;
+    animation: color-change 15s;
     animation-delay: 5.5s;
+    animation-iteration-count: infinite;
 }
 
 .r2 {
-    animation: color-change 5s;
+    animation: color-change 15s;
     animation-delay: 6s;
+    animation-iteration-count: infinite;
 }
 
 .m {
-    animation: color-change 5s;
+    animation: color-change 15s;
     animation-delay: 6.5s;
+    animation-iteration-count: infinite;
 }
 
 .a3 {
-    animation: color-change 5s;
+    animation: color-change 15s;
     animation-delay: 7s;
+    animation-iteration-count: infinite;
 }
 
 .n2 {
-    animation: color-change 5s;
+    animation: color-change 15s;
     animation-delay: 7.5s;
+    animation-iteration-count: infinite;
 }
 
 /* Fade in on view */
 @keyframes fade-in {
-    from {opacity: 0; transform: scale(.7,.7)}
+    from {opacity: 0; transform: translateY(2.5%)}
     to {opacity: 1;}
 }
 .fade-in-element {
-  animation: fade-in 1.4s;
+  animation: fade-in 1.5s;
 }
 
 .hidden {
@@ -430,6 +413,7 @@ ABOUT SECTION
 .book img {
     height: 150px;
     transition: all 0.5s ease-in-out;
+    border-radius: 2.5%;
 }
 
 .book img:hover {
@@ -442,7 +426,7 @@ ABOUT SECTION
 }
 
 .image-me {
-    border-radius: 5%;
+    border-radius: 1%;
     border: var(--font-color) 1px solid;
     width: 600px;
     transition: all 0.5s;
