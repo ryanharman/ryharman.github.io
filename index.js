@@ -72,9 +72,14 @@ function fetchBookData(bookId) {
   // .then(res=>{console.log(res)})
 };
 
+function secureImageLink(bookData) {
+  return bookData.volumeInfo.imageLinks.thumbnail.replace("http", "https");
+};
+
 function addBook(bookData) {
+  // console.log(bookData);
   const el = document.querySelectorAll('*[data-book-id="' + bookData.id + '"]');
   // console.log(el);
-  el[0].outerHTML = '<div data-book-id="' + bookData.id + '" class="book hover"><a target="blank" href="' + bookData.volumeInfo.infoLink + '"><img src="' + bookData.volumeInfo.imageLinks.thumbnail + '" alt="' + bookData.volumeInfo.title + '"></a></div>';
+  el[0].outerHTML = '<div data-book-id="' + bookData.id + '" class="book hover"><a target="blank" href="' + bookData.volumeInfo.infoLink + '"><img src="' + secureImageLink(bookData) + '" alt="' + bookData.volumeInfo.title + '"></a></div>';
   // console.log(bookData);
 };
