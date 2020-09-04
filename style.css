@@ -111,61 +111,61 @@ ANIMATION SECTION
 
 .r {
     animation: color-change 15s;
-    animation-delay: 3s;
+    animation-delay: 1.5s;
     animation-iteration-count: infinite;
 }
 
 .y {
     animation: color-change 15s;
-    animation-delay: 3.5s;
+    animation-delay: 2;
     animation-iteration-count: infinite;
 }
 
 .a {
     animation: color-change 15s; 
-    animation-delay: 4s; 
+    animation-delay: 2.5s; 
     animation-iteration-count: infinite;
 }
 
 .n {
     animation: color-change 15s;
-    animation-delay: 4.5s;
+    animation-delay: 3s;
     animation-iteration-count: infinite;
 }
 
 .h {
     animation: color-change 15s;
-    animation-delay: 5s;
+    animation-delay: 3.5s;
     animation-iteration-count: infinite;
 }
 
 .a2 {
     animation: color-change 15s;
-    animation-delay: 5.5s;
+    animation-delay: 4s;
     animation-iteration-count: infinite;
 }
 
 .r2 {
     animation: color-change 15s;
-    animation-delay: 6s;
+    animation-delay: 4.5s;
     animation-iteration-count: infinite;
 }
 
 .m {
     animation: color-change 15s;
-    animation-delay: 6.5s;
+    animation-delay: 5s;
     animation-iteration-count: infinite;
 }
 
 .a3 {
     animation: color-change 15s;
-    animation-delay: 7s;
+    animation-delay: 5.5s;
     animation-iteration-count: infinite;
 }
 
 .n2 {
     animation: color-change 15s;
-    animation-delay: 7.5s;
+    animation-delay: 6s;
     animation-iteration-count: infinite;
 }
 
