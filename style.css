@@ -117,7 +117,7 @@ ANIMATION SECTION
 
 .y {
     animation: color-change 15s;
-    animation-delay: 2;
+    animation-delay: 2s;
     animation-iteration-count: infinite;
 }
 
