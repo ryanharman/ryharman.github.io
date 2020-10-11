@@ -9,10 +9,6 @@ html {
     scroll-behavior: smooth;
 }
 
-/* 
-Other
-*/
-
 body {
     background-color: var(--bg-color);
     line-height: 1.3;
@@ -20,7 +16,7 @@ body {
     transition: 1s opacity;
 }
 
-:root {
+.light {
     --primary-color: #343A40;
     --secondary-color: #212529;
     --font-color: #212529;
@@ -29,8 +25,28 @@ body {
     /* Old --bg-color: #121212; */
 }
 
-.separator {
-    border-bottom: 1px grey solid;
+.dark {
+    --primary-color: #9A97F3;
+    --secondary-color: #818cab;
+    --font-color: #e1e1ff;
+    --alt-font-color: #F8F9FA;
+    --bg-color: #161625;
+}
+
+#theme {
+    display: none;
+    color: var(--font-color);
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    left: 5px;
+    z-index: 5;
+    font-size: 0.8rem;
+    padding: 10px;
+}
+
+#theme:hover {
+    opacity: 0.75;
 }
 
 /* 
@@ -194,34 +210,34 @@ Name Animation
 }
 
 @-webkit-keyframes color-change {
-    0% { color: #212529; }
+    0% { color: var(--font-color); }
     15% { color: #018786; }
-    80% { color: #212529; }
-    100% { color: #212529; }
+    80% { color: var(--font-color); }
+    100% { color: var(--font-color); }
 }
 @-moz-keyframes color-change {
-    0% { color: #212529; }
+    0% { color: var(--font-color); }
     15% { color: #018786; }
-    80% { color: #212529; }
-    100% { color: #212529; }
+    80% { color: var(--font-color); }
+    100% { color: var(--font-color); }
 }
 @-ms-keyframes color-change {
-    0% { color: #212529; }
+    0% { color: var(--font-color); }
     15% { color: #018786; }
-    80% { color: #212529; }
-    100% { color: #212529; }
+    80% { color: var(--font-color); }
+    100% { color: var(--font-color); }
 }
 @-o-keyframes color-change {
-    0% { color: #212529; }
+    0% { color: var(--font-color); }
     15% { color: #018786; }
-    80% { color: #212529; }
-    100% { color: #212529; }
+    80% { color: var(--font-color); }
+    100% { color: var(--font-color); }
 }
 @keyframes color-change {
-    0% { color: #212529; }
+    0% { color: var(--font-color); }
     15% { color: #018786; }
-    80% { color: #212529; }
-    100% { color: #212529; }
+    80% { color: var(--font-color); }
+    100% { color: var(--font-color); }
 }
 
 .r {
@@ -435,6 +451,12 @@ Footer
 
 .globalFooter .fa:hover {
     opacity: 0.7;
+}
+
+@media only screen and (min-width: 550px) {
+    #theme {
+        display: inline-block;
+    }
 }
 
 /* Tablet */

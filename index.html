@@ -8,6 +8,7 @@
     <link rel="stylesheet" type="text/css" href="style.css">
     <script type="text/javascript" src="https://code.jquery.com/jquery-latest.js"></script>
     <script type="text/javascript" src="index.js"></script>
+
     <!-- Primary Meta Tags -->
     <title>Ryan Harman - Software Developer</title>
     <meta name="title" content="Ryan Harman - Software Developer">
@@ -28,7 +29,10 @@
     <!-- <meta property="twitter:image" content="https://metatags.io/assets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png"> -->
     <title>Ryan Harman</title>
 </head>
-<body onload="animateHTML(); getBooks();">
+<body class="light" onload="animateHTML(); getBooks();" id="body">
+    <div id="theme" onclick="toggleTheme()">
+        <p>TOGGLE THEME</p>
+    </div>
     <header class="globalHeader hidden">
         <div>
             <h1><a href="https://ryan-harman.co.uk"><span>RYAN</span>HARMAN</a></h1>

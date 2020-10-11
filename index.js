@@ -84,3 +84,9 @@ $(function () {
     }, 10000);
   });
 });
+
+// JS for Dark Theme toggle
+function toggleTheme() {
+  document.body.classList.toggle("light");
+  document.body.classList.toggle("dark");
+}
