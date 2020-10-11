@@ -166,7 +166,7 @@ Main
 
 /* 
 Name Animation
- */
+*/
 
  @keyframes fadein {
     from { opacity: 0; }
@@ -486,7 +486,7 @@ Footer
     }
 }
 
-
+/* Desktop */
 @media only screen and (min-width: 1920px) {
     .main {
         padding-left: 650px;
