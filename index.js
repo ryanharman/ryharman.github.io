@@ -1,17 +1,3 @@
-$(document).ready(function(){
-    $(function () {
-        count = 0;
-        wordsArray = ["Bonjour, je m'appelle", "Hola, mi nombre es", "Hallo Ich heisse", "Ciao il mio nome è", "Hello, my name is"];
-        setInterval(function () {
-          count++;
-          $("#word").fadeOut(400, function () {
-            $(this).text(wordsArray[count % wordsArray.length]).fadeIn(400);
-          });
-        }, 10000);
-      });
-});
-
-
 // Provides animation when items come into view for the site
 const animateHTML = function() {
   var elements;
@@ -80,6 +66,21 @@ function addBook(bookData) {
   // console.log(bookData);
   const el = document.querySelectorAll('*[data-book-id="' + bookData.id + '"]');
   // console.log(el);
-  el[0].outerHTML = '<div data-book-id="' + bookData.id + '" class="book hover"><a target="blank" href="' + bookData.volumeInfo.infoLink + '"><img src="' + secureImageLink(bookData) + '" alt="' + bookData.volumeInfo.title + '"></a></div>';
+  el[0].outerHTML = '<div data-book-id="' + bookData.id + '" class="book"><a target="blank" href="' + bookData.volumeInfo.infoLink + '"><img src="' + secureImageLink(bookData) + '" alt="' + bookData.volumeInfo.title + '"></a></div>';
   // console.log(bookData);
 };
+
+
+// Function to reassign "Hello, my name is"
+$(document).ready(function(){
+$(function () {
+    count = 0;
+    wordsArray = ["Bonjour, je m'appelle", "Hola, mi nombre es", "Hallo ich heisse", "Ciao il mio nome è", "Hello, my name is"];
+    setInterval(function () {
+      count++;
+      $("#word").fadeOut(400, function () {
+        $(this).text(wordsArray[count % wordsArray.length]).fadeIn(400);
+      });
+    }, 10000);
+  });
+});
