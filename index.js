@@ -2,6 +2,7 @@ window.onload = function() {
   animateHTML();
   getBooks();
   themeToggleListener();
+  setInterval("changeImage()", 12000);
 }
 
 // Provides animation when items come into view for the site
@@ -94,4 +95,27 @@ function toggleTheme() {
 
 function themeToggleListener() {
   document.getElementById("theme").addEventListener("click", toggle => toggleTheme())
+}
+
+
+// JS to move to new image
+let i = 0
+function changeImage() {
+  const images = ["/imgs/3-P1033202.jpg", "/imgs/1-P1033189.jpg", "/imgs/headshot1.jpg"]
+  const getImage = document.getElementById("myImage");
+
+  setNewImage(images, getImage);
+}
+
+function setNewImage(array, el) {
+  if (i === array.length - 1) {
+    i = 0;
+  } else {
+    i++;
+  }
+  el.setAttribute("class", "myImage")
+  setTimeout(function() {
+    el.setAttribute("src", array[i]);
+    el.setAttribute("class", "myImage show")
+  }, 1750);
 }
