@@ -333,14 +333,11 @@ About
     margin: 0 auto;
 }
 
-.imgContainer img {
+.myImage {
     width: 100%;
     margin-top: 15px;
     border: 2px var(--primary-color) solid;
     border-radius: 1%;
-}
-
-.myImage {
     opacity: 0;
     transition: opacity 1.5s;
 }
