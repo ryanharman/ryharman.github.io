@@ -1,3 +1,9 @@
+window.onload = function() {
+  animateHTML();
+  getBooks();
+  themeToggleListener();
+}
+
 // Provides animation when items come into view for the site
 const animateHTML = function() {
   var elements;
@@ -31,7 +37,6 @@ const animateHTML = function() {
 // For collecting book image, title and link using Google Books API
 function getBooks() {
   const bookIds = getBookIds();
-  // console.log(bookIds);
 
   // Iterates over the Id's returned to return book information
   bookIds.forEach(bookId => {
@@ -43,7 +48,6 @@ function getBooks() {
 
 function getBookIds() {
   const findBooks = document.getElementsByClassName('book');
-  // console.log(findBooks);
   let values = [];
   // Loop returns the book ID stored in the element
   for (let item of findBooks) {
@@ -53,9 +57,8 @@ function getBookIds() {
 };
 
 function fetchBookData(bookId) {
-  return fetch('https://www.googleapis.com/books/v1/volumes/' + bookId)
-  // .then(data => {return data.json()})
-  // .then(res=>{console.log(res)})
+  // Returns a promise with book info
+  return fetch('https://www.googleapis.com/books/v1/volumes/' + bookId) 
 };
 
 function secureImageLink(bookData) {
@@ -63,11 +66,9 @@ function secureImageLink(bookData) {
 };
 
 function addBook(bookData) {
-  // console.log(bookData);
   const el = document.querySelectorAll('*[data-book-id="' + bookData.id + '"]');
-  // console.log(el);
+
   el[0].outerHTML = '<div data-book-id="' + bookData.id + '" class="book"><a target="blank" href="' + bookData.volumeInfo.infoLink + '"><img src="' + secureImageLink(bookData) + '" alt="' + bookData.volumeInfo.title + '"></a></div>';
-  // console.log(bookData);
 };
 
 
@@ -89,4 +90,8 @@ $(function () {
 function toggleTheme() {
   document.body.classList.toggle("light");
   document.body.classList.toggle("dark");
+}
+
+function themeToggleListener() {
+  document.getElementById("theme").addEventListener("click", toggle => toggleTheme())
 }
