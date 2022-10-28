@@ -1,0 +1,31 @@
+{
+  "name": "@example/with-tailwindcss",
+  "type": "module",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/mdx": "^0.11.5",
+    "@astrojs/tailwind": "^2.1.1",
+    "@tabler/icons": "^1.108.0",
+    "@tailwindcss/line-clamp": "^0.4.2",
+    "@types/canvas-confetti": "^1.4.3",
+    "astro": "^1.5.3",
+    "autoprefixer": "^10.4.7",
+    "canvas-confetti": "^1.5.1",
+    "framer-motion": "^7.6.1",
+    "postcss": "^8.4.14",
+    "tailwindcss": "^3.0.24"
+  },
+  "devDependencies": {
+    "@astrojs/react": "^1.2.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}

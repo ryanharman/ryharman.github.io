@@ -1,0 +1,19 @@
+---
+import "../style.css";
+import Main from "../layouts/main.astro";
+import Rain from "../components/Rain.astro";
+import SectionOne from "../components/sections/SectionOne.astro";
+import SectionTwo from "../components/sections/SectionTwo.astro";
+import Footer from "../components/Footer.astro";
+import SectionThree from "../components/sections/SectionThree.astro";
+---
+
+<Main>
+  <Rain />
+  <main class="bg-gray-900 text-white">
+    <SectionOne />
+    <SectionTwo />
+    <SectionThree />
+  </main>
+  <Footer />
+</Main>
