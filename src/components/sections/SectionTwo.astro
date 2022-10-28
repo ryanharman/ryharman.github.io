@@ -1,5 +1,6 @@
 ---
 import OnScroll from "../react/OnScroll";
+import Paragraph from "../Paragraph.astro";
 ---
 
 <section class="relative max-w-6xl flex flex-col items-start justify-center m-auto">
@@ -34,10 +35,10 @@ import OnScroll from "../react/OnScroll";
       >
         <div class="h-2 border-b-2 border-green-400"></div>
       </OnScroll>
-      <p class="text-gray-500 text-xl font-light">
+      <Paragraph>
         I help individuals, startups and large enterprises build out their products and meet
         ambitious deadlines - <b class="text-gray-400">the more ambitious the better</b>.
-      </p>
+      </Paragraph>
       <div class="mt-4">
         <button
           onclick="document.getElementById('about').scrollIntoView();"

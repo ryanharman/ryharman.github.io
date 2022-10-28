@@ -1,16 +1,17 @@
 ---
+import Paragraph from "../Paragraph.astro";
 import Arrow from "../react/Arrow";
 import DotsRectangle from "../react/DotsRectangle";
 import OnScroll from "../react/OnScroll";
 ---
 
 <section id="about" class="relative max-w-6xl flex flex-col items-start justify-center m-auto">
-  <div class="pointer-events-none absolute w-[800px] h-[800px] -top-80 -left-24">
+  <div class="hidden md:block pointer-events-none absolute w-[800px] h-[800px] -top-80 -left-24">
     <Arrow client:load />
   </div>
   <div class="w-full">
     <OnScroll client:load>
-      <div class="mt-72 flex flex-col gap-4 max-w-2xl">
+      <div class="mt-16 md:mt-72 flex flex-col gap-4 max-w-2xl">
         <h3 class="text-4xl">This is what I do.</h3>
         <OnScroll
           client:load
@@ -39,7 +40,7 @@ import OnScroll from "../react/OnScroll";
         </p>
         <div>
           <h5 class="text-rose-400 text-lg">Some of my experience</h5>
-          <p class="text-gray-500 text-xl font-light">
+          <Paragraph>
             I've worked with <b class="text-gray-400">enterprise applications</b> with the largest automotive
             manufacturers in the world, <b class="text-gray-400">creating and maintaining</b> products
             built for healthcare services, developing <b class="text-gray-400"
@@ -47,7 +48,7 @@ import OnScroll from "../react/OnScroll";
             >, building <b class="text-gray-400">libraries for reusability</b>, and creating <b
               class="text-gray-400">custom web applications</b
             > for small businesses and startups.
-          </p>
+          </Paragraph>
         </div>
       </div>
     </OnScroll>
@@ -59,15 +60,15 @@ import OnScroll from "../react/OnScroll";
         </div>
         <div></div>
         <div>
-          <p class="text-gray-500 text-xl font-light">
+          <Paragraph>
             I pride myself on building <b class="text-gray-400"
               >sustainable and maintainable products</b
             > using agile principles and the latest software methodologies.
-          </p>
-          <p class="text-gray-500 text-xl font-light">
+          </Paragraph>
+          <Paragraph>
             If you work with crypto, gambling or a product that takes advantage of its users, I'm
             not the right developer for you.
-          </p>
+          </Paragraph>
         </div>
       </div>
     </OnScroll>
@@ -75,12 +76,12 @@ import OnScroll from "../react/OnScroll";
     <OnScroll client:load>
       <div class="my-8 flex flex-col max-w-2xl">
         <h5 class="text-rose-400 text-lg">My tech stack</h5>
-        <p class="text-gray-500 text-xl font-light">
+        <Paragraph>
           <b class="text-gray-400">React</b> is my bread and butter. Pair it alongside <b
             class="text-gray-400">Node.js and Express, Serverless AWS Lambda functions</b
           >, or utilising <b class="text-gray-400">Next.js</b>, I can build a full-stack application
           for you.
-        </p>
+        </Paragraph>
         <p class="mt-2 text-gray-500 text-xl font-light">
           When not in the code itself I spend a lot of time architecting and planning solutions.
           From discovery, all the way to deployment, I can support your development pipeline to
