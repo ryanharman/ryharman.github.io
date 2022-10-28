@@ -1,6 +1,5 @@
 import { motion, useInView, Variants } from 'framer-motion';
 import { useEffect, useRef, useState } from 'react';
-import OnScroll from './OnScroll';
 
 const variants: Variants = {
   offscreen: {
