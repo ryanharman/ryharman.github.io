@@ -1,15 +1,17 @@
 ---
 import "../style.css";
 import Main from "../layouts/main.astro";
-import Rain from "../components/Rain.astro";
+// import Rain from "../components/Rain.astro";
 import SectionOne from "../components/sections/SectionOne.astro";
 import SectionTwo from "../components/sections/SectionTwo.astro";
 import Footer from "../components/Footer.astro";
 import SectionThree from "../components/sections/SectionThree.astro";
+import ParticlesContainer from "../components/react/Particles";
 ---
 
 <Main>
-  <Rain />
+  <!-- <Rain /> -->
+  <ParticlesContainer client:only="react" />
   <main class="bg-gray-900 text-white overflow-x-hidden p-4 md:p-8">
     <SectionOne />
     <SectionTwo />
