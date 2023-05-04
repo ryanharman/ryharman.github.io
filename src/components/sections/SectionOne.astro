@@ -1,3 +1,8 @@
+---
+import IconBrandGithub from "../icons/IconBrandGithub";
+import IconBrandLinkedin from "../icons/IconBrandLinkedin";
+---
+
 <section
   class="relative max-w-6xl font-light h-screen flex flex-col items-start justify-center m-auto"
 >
@@ -7,7 +12,7 @@
       Ryan Harman <div class="animate-[wiggle_1s_ease-in-out_infinite]">👋</div>
     </h1>
   </div>
-  <div class="text-gray-600 text-xl other-entry-animation">
+  <div class="text-gray-500 text-xl other-entry-animation">
     <p>
       I'm a <b class="text-gray-400">Software Engineer</b> that enjoys freelancing alongside my day job
       at
@@ -23,6 +28,24 @@
       I specialise in JavaScript / TypeScript development with React and Node.js.
       <b class="text-gray-400"> I make solid, scalable products.</b>
     </p>
+    <div class="flex gap-4 mt-4">
+      <a
+        aria-label="GitHub"
+        href="https://github.com/ryanharman"
+        target="_blank"
+        class="text-gray-200 cursor-pointer transition-all hover:text-green-400 p-2 hover:bg-gray-100 hover:bg-opacity-10 rounded-full"
+      >
+        <IconBrandGithub size={30} stroke={1.5} />
+      </a>
+      <a
+        aria-label="LinkedIn"
+        href="https://www.linkedin.com/in/ryan-harman63/"
+        target="_blank"
+        class="text-gray-200 cursor-pointer transition-all hover:text-blue-400 p-2 hover:bg-gray-100 hover:bg-opacity-10 rounded-full"
+      >
+        <IconBrandLinkedin size={30} stroke={1.5} />
+      </a>
+    </div>
   </div>
 
   <div

@@ -2,23 +2,17 @@
 import "../style.css";
 import IconBrandGithub from "./icons/IconBrandGithub";
 import IconBrandLinkedin from "./icons/IconBrandLinkedin";
-import IconCode from "./icons/IconCode";
-import IconMail from "./icons/IconMail";
 ---
 
-<footer class="bg-gray-800 text-gray-300">
+<footer class="text-gray-300 border-t border-neutral-800">
   <section class="max-w-6xl hidden sm:flex items-center justify-between m-auto py-16 text-lg">
-    <div>
-      <div class="flex gap-2 items-center"><IconCode stroke={1.5} />Ryan Harman</div>
-      <a
-        aria-label="Email"
-        href="mailto:me@ryanharman.dev"
-        class="flex gap-2 items-center mt-2 hover:text-rose-400 transition-all"
-      >
-        <IconMail stroke={1.5} />
-        me@ryanharman.dev
-      </a>
-    </div>
+    <a
+      aria-label="Email"
+      href="mailto:me@ryanharman.dev"
+      class="flex gap-2 items-center mt-2 hover:text-rose-200 transition-all hover:underline"
+    >
+      me@ryanharman.dev
+    </a>
     <div class="flex gap-8">
       <a
         aria-label="GitHub"
