@@ -1,22 +1,5 @@
-import { motion, useInView, Variants } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
 import { useEffect, useRef, useState } from 'react';
-
-const variants: Variants = {
-  offscreen: {
-    pathLength: 0,
-    transition: {
-      delay: 0.1,
-      duration: 1,
-    },
-  },
-  onscreen: {
-    pathLength: 1,
-    transition: {
-      delay: 0.1,
-      duration: 1,
-    },
-  },
-};
 
 export default function Arrow() {
   const ref = useRef(null);
@@ -31,7 +14,12 @@ export default function Arrow() {
   }, [isInView]);
 
   return (
-    <svg ref={ref} xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 800 800">
+    <svg
+      ref={ref}
+      xmlns="http://www.w3.org/2000/svg"
+      version="1.1"
+      viewBox="0 0 800 800"
+    >
       <g
         strokeWidth="3"
         stroke=" #22c55e"

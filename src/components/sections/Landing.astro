@@ -1,10 +1,12 @@
 ---
+import Bold from "../Bold.astro";
+import ScrollIndicator from "../ScrollIndicator.astro";
 import IconBrandGithub from "../icons/IconBrandGithub";
 import IconBrandLinkedin from "../icons/IconBrandLinkedin";
 ---
 
 <section
-  class="relative max-w-6xl font-light h-screen flex flex-col items-start justify-center m-auto"
+  class="relative max-w-6xl w-full font-light h-screen flex flex-col items-start justify-center m-auto mb-52"
 >
   <div class="mb-8 text-entry-animation">
     <h1 class="text-gray-400 text-5xl md:text-7xl">Hey, I'm</h1>
@@ -14,8 +16,8 @@ import IconBrandLinkedin from "../icons/IconBrandLinkedin";
   </div>
   <div class="text-gray-500 text-xl other-entry-animation">
     <p>
-      I'm a <b class="text-gray-400">Software Engineer</b> that enjoys freelancing
-      alongside my day job at
+      I'm a <Bold>Software Engineer</Bold> that enjoys freelancing alongside my day
+      job at
       <a
         aria-label="Corporation Pop"
         href="https://corporationpop.co.uk/"
@@ -48,14 +50,6 @@ import IconBrandLinkedin from "../icons/IconBrandLinkedin";
       </a>
     </div>
   </div>
-
-  <div
-    class="absolute bottom-[210px] font-normal tracking-wider text-gray-400 other-entry-animation sm:hidden md:block"
-  >
-    SCROLL
-  </div>
-  <div
-    class="after:absolute after:bottom-0 pl-8 after:h-[200px] after:w-[1px] after:bg-gray-500 animate-up sm:hidden md:block"
-  >
-  </div>
+  <!-- Padding for compensation on section wrapper -->
+  <ScrollIndicator />
 </section>

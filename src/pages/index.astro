@@ -1,21 +1,23 @@
 ---
 import "../style.css";
 import Main from "../layouts/main.astro";
-import SectionOne from "../components/sections/SectionOne.astro";
-import SectionTwo from "../components/sections/SectionTwo.astro";
+import Landing from "../components/sections/Landing.astro";
+import LearnMore from "../components/sections/LearnMore.astro";
 import Footer from "../components/Footer.astro";
-import SectionThree from "../components/sections/SectionThree.astro";
+import AboutMe from "../components/sections/AboutMe.astro";
 import ParticlesContainer from "../components/react/Particles";
+import Projects from "../components/sections/Projects.astro";
 ---
 
 <Main>
   <ParticlesContainer client:only="react" />
   <main
-    class="bg-gradient-to-br from-zinc-900 via-neutral-900 to-zinc-900 text-white overflow-x-hidden p-4 md:p-8"
+    class="flex flex-col gap-24 w-full bg-gradient-to-br from-zinc-900 via-neutral-900 to-zinc-900 text-white overflow-x-hidden p-4 md:p-8"
   >
-    <SectionOne />
-    <SectionTwo />
-    <SectionThree />
+    <Landing />
+    <Projects />
+    <LearnMore />
+    <AboutMe />
   </main>
   <Footer />
 </Main>

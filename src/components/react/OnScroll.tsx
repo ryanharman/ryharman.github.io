@@ -27,7 +27,11 @@ const defaultVariants: Variants = {
 export default function OnScroll({ children, variants }: OnScrollProps) {
   const variantsInUse = variants || defaultVariants;
   return (
-    <motion.div initial="offscreen" whileInView="onscreen" viewport={{ once: true, amount: 0.8 }}>
+    <motion.div
+      initial="offscreen"
+      whileInView="onscreen"
+      viewport={{ once: true, amount: 0.8 }}
+    >
       <motion.div variants={variantsInUse}>{children}</motion.div>
     </motion.div>
   );

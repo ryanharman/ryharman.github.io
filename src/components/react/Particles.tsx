@@ -1,11 +1,10 @@
-import { useCallback } from "react";
-import Particles from "react-particles";
-import { loadFull } from "tsparticles";
-import OnScroll from "./OnScroll";
+import { useCallback } from 'react';
+import Particles from 'react-particles';
+import { loadFull } from 'tsparticles';
+import OnScroll from './OnScroll';
 
 export default function ParticlesContainer() {
   const particlesInit = useCallback(async (engine: any) => {
-    console.log(engine);
     await loadFull(engine);
   }, []);
 
