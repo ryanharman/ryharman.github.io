@@ -1,4 +1,4 @@
-import { motion, Variants } from 'framer-motion';
+import { motion, Variants } from "framer-motion";
 
 interface OnScrollProps {
   children: React.ReactNode;
@@ -11,7 +11,7 @@ const defaultVariants: Variants = {
     transform: "translateY(10px)",
     transition: {
       delay: 0.1,
-      duration: 1,
+      duration: 0.5,
     },
   },
   onscreen: {
@@ -19,7 +19,7 @@ const defaultVariants: Variants = {
     transform: "translateY(0px)",
     transition: {
       delay: 0.1,
-      duration: 1,
+      duration: 0.5,
     },
   },
 };

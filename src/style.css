@@ -14,49 +14,15 @@
 .text-entry-animation {
   opacity: 0;
   animation-name: fadeIn;
-  animation-duration: 0.75s;
-  animation-delay: 1.15s;
+  animation-duration: 0.5s;
+  animation-delay: 0.5s;
   animation-fill-mode: forwards;
 }
 
 .other-entry-animation {
   opacity: 0;
   animation-name: fadeIn;
-  animation-duration: 0.8s;
-  animation-delay: 1.5s;
+  animation-duration: 0.5s;
+  animation-delay: 1s;
   animation-fill-mode: forwards;
-}
-
-.animate-up:after {
-  height: 0px;
-  animation-name: animateUp;
-  animation-duration: 0.8s;
-  animation-delay: 1.5s;
-  animation-fill-mode: forwards;
-}
-
-@keyframes animateUp {
-  0% {
-    height: 0px;
-  }
-  100% {
-    height: 200px;
-  }
-}
-
-.animate-arrow {
-  stroke: #f43f5e;
-  stroke-dasharray: 6000;
-  stroke-dashoffset: 0;
-  animation: dash 5s linear;
-}
-
-@keyframes dash {
-  0% {
-    stroke-dashoffset: 6000;
-  }
-
-  100% {
-    stroke-dashoffset: 0;
-  }
 }
