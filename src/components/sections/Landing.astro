@@ -1,12 +1,11 @@
 ---
 import Bold from "../Bold.astro";
-import ScrollIndicator from "../ScrollIndicator.astro";
 import IconBrandGithub from "../icons/IconBrandGithub";
 import IconBrandLinkedin from "../icons/IconBrandLinkedin";
 ---
 
 <section
-  class="relative max-w-6xl w-full font-light h-screen flex flex-col items-start justify-center m-auto mb-52"
+  class="relative max-w-6xl w-full font-light h-screen flex flex-col items-start justify-center m-auto"
 >
   <div class="mb-8 text-entry-animation">
     <h1 class="text-gray-400 text-5xl md:text-7xl">Hey, I'm</h1>
@@ -50,6 +49,19 @@ import IconBrandLinkedin from "../icons/IconBrandLinkedin";
       </a>
     </div>
   </div>
-  <!-- Padding for compensation on section wrapper -->
-  <ScrollIndicator />
+  <div class="absolute bottom-24 m-auto other-entry-animation">
+    <svg
+      class="text-gray-100 animate-bounce"
+      width="30"
+      height="30"
+      viewBox="0 0 15 15"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      ><path
+        d="M3.85355 2.14645C3.65829 1.95118 3.34171 1.95118 3.14645 2.14645C2.95118 2.34171 2.95118 2.65829 3.14645 2.85355L7.14645 6.85355C7.34171 7.04882 7.65829 7.04882 7.85355 6.85355L11.8536 2.85355C12.0488 2.65829 12.0488 2.34171 11.8536 2.14645C11.6583 1.95118 11.3417 1.95118 11.1464 2.14645L7.5 5.79289L3.85355 2.14645ZM3.85355 8.14645C3.65829 7.95118 3.34171 7.95118 3.14645 8.14645C2.95118 8.34171 2.95118 8.65829 3.14645 8.85355L7.14645 12.8536C7.34171 13.0488 7.65829 13.0488 7.85355 12.8536L11.8536 8.85355C12.0488 8.65829 12.0488 8.34171 11.8536 8.14645C11.6583 7.95118 11.3417 7.95118 11.1464 8.14645L7.5 11.7929L3.85355 8.14645Z"
+        fill="currentColor"
+        fill-rule="evenodd"
+        clip-rule="evenodd"></path></svg
+    >
+  </div>
 </section>
