@@ -19,7 +19,9 @@ const { currentPage } = Astro.props;
     class="bg-zinc-900 text-white max-w-2xl mx-auto antialiased font-sans py-8 md:px-0 px-6 space-y-16"
   >
     <Header currentPage={currentPage} />
-    <article class="space-y-3">
+    <article
+      class="space-y-3 relative after:w-full after:h-[1px] after:bg-white/50 after:absolute after:-bottom-8"
+    >
       <div class="flex">
         <h1 class="font-bold text-3xl tracking-tight">Hey, I'm Ryan Harman</h1>
         <div
