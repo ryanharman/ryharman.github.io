@@ -1,0 +1,57 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+
+type Props = {
+  currentPage: "/" | "/about" | "/thoughts";
+};
+
+const { currentPage } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body
+    class="bg-zinc-900 text-white max-w-2xl mx-auto antialiased font-sans py-8 md:px-0 px-6 space-y-16"
+  >
+    <Header currentPage={currentPage} />
+    <article class="space-y-3">
+      <div class="flex">
+        <h1 class="font-bold text-3xl tracking-tight">Hey, I'm Ryan Harman</h1>
+        <div
+          class="text-3xl ml-2 animate-[wiggle_1s_ease-in-out_infinite] w-fit"
+        >
+          👋
+        </div>
+      </div>
+      <p>
+        I'm a Software Engineer specialising in TypeScript applications built
+        with with React and Node.js. <span class="font-medium text-zinc-200"
+          >I make solid, scalable products.</span
+        >
+      </p>
+      <p>
+        You can find my code at <a
+          class="border-b border-white/50 hover:border-white cursor-pointer text-white hover:transition-none transition-all"
+          href="https://github.com/ryanharman"
+          target="_blank">GitHub</a
+        > or get in touch via <a
+          class="border-b border-white/50 hover:border-white cursor-pointer text-white hover:transition-none transition-all"
+          href="https://www.linkedin.com/in/ryan-harman63/"
+          target="_blank">LinkedIn</a
+        > or <a
+          class="border-b border-white/50 hover:border-white cursor-pointer text-white hover:transition-none transition-all"
+          href="mailto:me@ryanharman.dev">me@ryanharman.dev</a
+        >
+      </p>
+    </article>
+    <main class="space-y-16">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

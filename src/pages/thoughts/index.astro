@@ -1,0 +1,45 @@
+---
+// import { getCollection } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+// import FormattedDate from "../../components/FormattedDate.astro";
+
+// const posts = (await getCollection("thoughts")).sort(
+//   (a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
+// );
+---
+
+<Layout currentPage="/thoughts">
+  <section class="space-y-3">
+    <h2 class="text-xl tracking-tight font-bold">My thoughts</h2>
+    <h3 class="tracking-tight font-medium text-zinc-300">
+      No posts yet. Maybe check another time
+    </h3>
+    <!-- <ul class="space-y-2">
+      {
+        posts.length === 0 ? (
+          <li>
+            <h3 class="tracking-tight font-medium text-zinc-300">
+              No posts yet. Maybe check another time
+            </h3>
+          </li>
+        ) : (
+          posts.map((post) => (
+            <li>
+              <a
+                class="group grid grid-cols-6"
+                href={`/thoughts/${post.slug}/`}
+              >
+                <h4 class="tracking-tight font-medium col-span-3 group-hover:underline">
+                  {post.data.title}
+                </h4>
+                <p>
+                  <FormattedDate date={post.data.pubDate} />
+                </p>
+              </a>
+            </li>
+          ))
+        )
+      }
+    </ul> -->
+  </section>
+</Layout>

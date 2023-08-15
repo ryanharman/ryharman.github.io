@@ -20,7 +20,9 @@ declare module 'astro:content' {
 
 declare module 'astro:content' {
 	export { z } from 'astro/zod';
-	export type CollectionEntry<C extends keyof AnyEntryMap> = AnyEntryMap[C][keyof AnyEntryMap[C]];
+
+	type Flatten<T> = T extends { [K: string]: infer U } ? U : never;
+	export type CollectionEntry<C extends keyof AnyEntryMap> = Flatten<AnyEntryMap[C]>;
 
 	// TODO: Remove this when having this fallback is no longer relevant. 2.3? 3.0? - erika, 2023-04-04
 	/**
@@ -198,7 +200,16 @@ declare module 'astro:content' {
 	>;
 
 	type ContentEntryMap = {
-		
+		"thoughts": {
+"my-first-thought.mdx": {
+	id: "my-first-thought.mdx";
+  slug: "my-first-thought";
+  body: string;
+  collection: "thoughts";
+  data: InferEntrySchema<"thoughts">
+} & { render(): Render[".mdx"] };
+};
+
 	};
 
 	type DataEntryMap = {
@@ -207,5 +218,5 @@ declare module 'astro:content' {
 
 	type AnyEntryMap = ContentEntryMap & DataEntryMap;
 
-	type ContentConfig = never;
+	type ContentConfig = typeof import("../src/content/config");
 }

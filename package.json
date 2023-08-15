@@ -1,8 +1,7 @@
 {
-  "name": "ryanharman-dev",
+  "name": "portfolio-site",
   "type": "module",
   "version": "0.0.1",
-  "private": true,
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
@@ -12,20 +11,10 @@
   },
   "dependencies": {
     "@astrojs/mdx": "^0.19.7",
+    "@astrojs/rss": "^2.4.4",
+    "@astrojs/sitemap": "^2.0.1",
     "@astrojs/tailwind": "^4.0.0",
-    "astro": "^2.8.3",
-    "autoprefixer": "^10.4.14",
-    "framer-motion": "^7.6.1",
-    "postcss": "^8.4.26",
-    "react-particles": "^2.11.0",
-    "tailwindcss": "^3.3.3",
-    "tsparticles": "^2.11.0"
-  },
-  "devDependencies": {
-    "@astrojs/react": "^2.2.1",
-    "@types/react": "^18.2.15",
-    "@types/react-dom": "^18.2.7",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "astro": "^2.10.7",
+    "tailwindcss": "^3.0.24"
   }
 }

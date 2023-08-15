@@ -1,35 +1,9 @@
 ---
-import "../style.css";
-import IconBrandGithub from "./icons/IconBrandGithub";
-import IconBrandLinkedin from "./icons/IconBrandLinkedin";
+const today = new Date();
 ---
 
-<footer class="text-gray-300 border-t border-neutral-800">
-  <section class="max-w-6xl hidden sm:flex items-center justify-between m-auto py-16 text-lg">
-    <a
-      aria-label="Email"
-      href="mailto:me@ryanharman.dev"
-      class="flex gap-2 items-center mt-2 hover:text-rose-200 transition-all hover:underline"
-    >
-      me@ryanharman.dev
-    </a>
-    <div class="flex gap-8">
-      <a
-        aria-label="GitHub"
-        href="https://github.com/ryanharman"
-        target="_blank"
-        class="cursor-pointer transition-all hover:text-green-400 p-2 hover:bg-gray-100 hover:bg-opacity-10 rounded-full"
-      >
-        <IconBrandGithub size={30} stroke={1.5} />
-      </a>
-      <a
-        aria-label="LinkedIn"
-        href="https://www.linkedin.com/in/ryan-harman63/"
-        target="_blank"
-        class="cursor-pointer transition-all hover:text-blue-400 p-2 hover:bg-gray-100 hover:bg-opacity-10 rounded-full"
-      >
-        <IconBrandLinkedin size={30} stroke={1.5} />
-      </a>
-    </div>
-  </section>
+<footer class="border-t border-white/50 py-6">
+  <p class="text-zinc-400">
+    &copy; Ryan Harman {today.getFullYear()}
+  </p>
 </footer>

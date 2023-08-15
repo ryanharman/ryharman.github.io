@@ -1,7 +1,6 @@
 {
-  "extends": "astro/tsconfigs/strict",
+  "extends": "astro/tsconfigs/strictest",
   "compilerOptions": {
-    "jsx": "preserve",
-    "ignoreDeprecations": "5.0"
+    "strictNullChecks": true
   }
 }

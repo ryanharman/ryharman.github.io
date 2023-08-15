@@ -1,23 +1,93 @@
 ---
-import "../style.css";
-import Main from "../layouts/main.astro";
-import Landing from "../components/sections/Landing.astro";
-import LearnMore from "../components/sections/LearnMore.astro";
-import Footer from "../components/Footer.astro";
-import AboutMe from "../components/sections/AboutMe.astro";
-import ParticlesContainer from "../components/react/Particles";
-import Projects from "../components/sections/Projects.astro";
+import Layout from "../layouts/Layout.astro";
+
+type Project = {
+  owner: string;
+  repo: string;
+  link: string;
+  description?: string;
+  image: string;
+  website?: string;
+  language: string;
+  languageColor: string;
+  stars: number | string;
+  forks: number;
+};
+
+const projects: Project[] = await fetch(
+  "https://gh-pinned.vercel.app/api/user/ryanharman"
+)
+  .then((res) => res.json())
+  .then((res: Project[]) =>
+    res.sort((a, b) => Number(a.stars) - Number(b.stars))
+  )
+  // Sort for projects with websites first
+  .then((res: Project[]) =>
+    res.sort((a, b) => {
+      if (a.website) return -1;
+      if (b.website) return 1;
+      return 0;
+    })
+  )
+  .catch(() => []);
 ---
 
-<Main>
-  <ParticlesContainer client:only="react" />
-  <main
-    class="flex flex-col gap-24 w-full bg-gradient-to-br from-zinc-900 via-neutral-900 to-zinc-900 text-white overflow-x-hidden p-4 md:p-8"
-  >
-    <Landing />
-    <Projects />
-    <LearnMore />
-    <AboutMe />
-  </main>
-  <Footer />
-</Main>
+<Layout currentPage="/">
+  <article class="space-y-3">
+    <h2 class="text-xl tracking-tight font-bold">Some of my projects</h2>
+    <p>
+      I love to build things, and I love to share them with the world. Here are
+      some of my projects that I've built
+    </p>
+    <div class="grid md:grid-cols-2 gap-x-4 gap-y-2">
+      {
+        projects?.map((project) => (
+          <div class="space-y-2">
+            <a href={project?.link} target="_blank">
+              <h4 class="tracking-tight font-medium border-b border-white/50 hover:border-white w-fit hover:transition-none transition-all">
+                {project.repo}
+              </h4>
+            </a>
+            <p class="text-zinc-400">{project.description}</p>
+          </div>
+        ))
+      }
+    </div>
+  </article>
+  <article class="space-y-3">
+    <h3 class="text-xl tracking-tight font-bold">Lets work together</h3>
+    <p>
+      I help individuals, startups and large enterprises build out their
+      products and meet ambitious deadlines.
+      <span class="font-medium text-zinc-200"
+        >My goal is to always create exceptional experiences for the right
+        reasons.</span
+      >
+    </p>
+    <p>
+      You can find out more in my <a
+        class="border-b border-white/50 hover:border-white cursor-pointer text-white hover:transition-none transition-all"
+        href="/about">about</a
+      > page
+    </p>
+    <div class="pt-6">
+      <a
+        class="group px-4 py-3 rounded-md border border-white/50 hover:border-white font-medium tracking-tight"
+        href="/about"
+        >Learn more about me <svg
+          class="inline-block group-hover:-translate-y-[2px] group-hover:translate-x-[2px] transition-all"
+          width="18"
+          height="18"
+          viewBox="0 0 15 15"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          ><path
+            d="M3.64645 11.3536C3.45118 11.1583 3.45118 10.8417 3.64645 10.6465L10.2929 4L6 4C5.72386 4 5.5 3.77614 5.5 3.5C5.5 3.22386 5.72386 3 6 3L11.5 3C11.6326 3 11.7598 3.05268 11.8536 3.14645C11.9473 3.24022 12 3.36739 12 3.5L12 9.00001C12 9.27615 11.7761 9.50001 11.5 9.50001C11.2239 9.50001 11 9.27615 11 9.00001V4.70711L4.35355 11.3536C4.15829 11.5488 3.84171 11.5488 3.64645 11.3536Z"
+            fill="currentColor"
+            fill-rule="evenodd"
+            clip-rule="evenodd"></path></svg
+        ></a
+      >
+    </div>
+  </article>
+</Layout>
