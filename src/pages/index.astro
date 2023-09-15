@@ -44,9 +44,9 @@ const projects: Project[] = await fetch(
         projects?.map((project) => (
           <div class="space-y-2">
             <a href={project?.link} target="_blank">
-              <h4 class="tracking-tight font-medium border-b border-white/50 hover:border-white w-fit hover:transition-none transition-all">
+              <div class="tracking-tight font-medium border-b border-white/50 hover:border-white w-fit hover:transition-none transition-all">
                 {project.repo}
-              </h4>
+              </div>
             </a>
             <p class="text-zinc-400">{project.description}</p>
           </div>
