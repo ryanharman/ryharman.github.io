@@ -9,6 +9,17 @@ import Layout from "../../layouts/Layout.astro";
 ---
 
 <Layout currentPage="/thoughts">
+  <!-- Chatloop Tag (chatloop-tag.js) -->
+  <script>
+      (function(c,h,a,t,l,o,O,p){
+          if(c._cl !== undefined){return;}
+          c._clConfig={...o,account:t,domain:l};
+          O=h.getElementsByTagName('head')[0];
+          p=h.createElement('script');p.async=1;p.src=a;p.type="module";
+          O.appendChild(p);
+      })(window,document, 'https://sdk.chatloop.app/chatloop-tag.js', '018c5922-518d-7265-8a3b-ef5710990c67', {id: '0190c642-6ffb-71d0-a1a0-039799398838', domain: 'ryanharman.dev' }, []);
+  </script>
+
   <section class="space-y-3">
     <h2 class="text-xl tracking-tight font-bold">My thoughts</h2>
     <h3 class="tracking-tight font-medium text-zinc-300">
