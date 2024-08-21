@@ -14,18 +14,35 @@ const { currentPage } = Astro.props;
 <html lang="en">
   <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-  </head>
+    <script>
+      (function (c, h, a, t, l, o, O, p) {
+        if (c._cl !== undefined) {
+          return;
+        }
+        c._clConfig = o;
+        o.account = t;
+        o.domain = l;
+        O = h.getElementsByTagName("head")[0];
+        p = h.createElement("script");
+        p.async = 1;
+        p.src = a;
+        p.type = "module";
+        O.appendChild(p);
+      })(
+        window,
+        document,
+        "https://sdk.chatloop.app/chatloop-tag.js",
+        "018c5922-518d-7265-8a3b-ef5710990c67",
+        {
+          id: "0190dad1-c724-71fe-a4fa-6cb36a3a3fb9",
+          domain: "ryanharman.dev",
+        },
+        []
+      );
+    </script></head
+  >
 
   <!-- Chatloop Tag (chatloop-tag.js) -->
-  <script>
-      (function(c,h,a,t,l,o,O,p){
-          if(c._cl !== undefined){return;}
-          c._clConfig={...o,account:t,domain:l};
-          O=h.getElementsByTagName('head')[0];
-          p=h.createElement('script');p.async=1;p.src=a;p.type="module";
-          O.appendChild(p);
-      })(window,document, 'https://sdk.chatloop.app/chatloop-tag.js', '018c5922-518d-7265-8a3b-ef5710990c67', {id: '0190c642-6ffb-71d0-a1a0-039799398838', domain: 'ryanharman.dev' }, []);
-  </script>
 
   <body
     class="bg-zinc-900 text-white max-w-2xl mx-auto antialiased font-sans py-8 md:px-0 px-6 space-y-16"
