@@ -1,9 +1,17 @@
----
-const today = new Date();
----
+<script>
+  const today = new Date();
 
+  function updateYear() {
+    const year = today.getFullYear();
+    const pElement = document.getElementById("ryanharman");
+
+    if (pElement) {
+      pElement.textContent = `Ryan Harman ${year}`;
+    }
+  }
+
+  updateYear();
+</script>
 <footer class="border-t border-white/50 py-6">
-  <p class="text-zinc-400">
-    &copy; Ryan Harman {today.getFullYear()}
-  </p>
+  <p id="ryanharman" class="text-zinc-400">Ryan Harman</p>
 </footer>

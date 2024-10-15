@@ -1,61 +1,39 @@
 ---
+import { getCollection } from "astro:content";
 import Layout from "../layouts/Layout.astro";
 
-type Project = {
-  owner: string;
-  repo: string;
-  link: string;
-  description?: string;
-  image: string;
-  website?: string;
-  language: string;
-  languageColor: string;
-  stars: number | string;
-  forks: number;
-};
-
-const projects: Project[] = await fetch(
-  "https://gh-pinned.vercel.app/api/user/ryanharman"
-)
-  .then((res) => res.json())
-  .then((res: Project[]) =>
-    res.sort((a, b) => Number(a.stars) - Number(b.stars))
-  )
-  // Sort for projects with websites first
-  .then((res: Project[]) =>
-    res.sort((a, b) => {
-      if (a.website) return -1;
-      if (b.website) return 1;
-      return 0;
-    })
-  )
-  .catch(() => []);
+const projects = await getCollection("projects");
 ---
 
 <Layout currentPage="/">
-  <article class="space-y-3">
-    <h2 class="text-xl tracking-tight font-bold">Some of my projects</h2>
+  <article class="space-y-6">
+    <h2 class="text-2xl font-medium">Some of my projects</h2>
     <p>
       I love to build things, and I love to share them with the world. Here are
       some of my projects that I've built
     </p>
-    <div class="grid md:grid-cols-2 gap-x-4 gap-y-2">
+    <div class="grid md:grid-cols-2 gap-x-4 gap-y-4">
       {
         projects?.map((project) => (
-          <div class="space-y-2">
-            <a href={project?.link} target="_blank">
-              <div class="tracking-tight font-medium border-b border-white/50 hover:border-white w-fit hover:transition-none transition-all">
-                {project.repo}
-              </div>
-            </a>
-            <p class="text-zinc-400">{project.description}</p>
+          <div class="space-y-4 hover:bg-zinc-700/10 transition-colors rounded-lg p-4">
+            <div class="space-y-2">
+              <a href={project.data.link} target="_blank">
+                <div class="tracking-wided font-medium border-b border-white/50 hover:border-white w-fit hover:transition-none transition-all">
+                  {project.data.title}
+                </div>
+              </a>
+              <p class="font-mono text-zinc-400 text-sm">
+                {project.data.stack}
+              </p>
+            </div>
+            <p class="">{project.body}</p>
           </div>
         ))
       }
     </div>
   </article>
-  <article class="space-y-3">
-    <h3 class="text-xl tracking-tight font-bold">Lets work together</h3>
+  <article class="space-y-6">
+    <h3 class="text-2xl font-medium">Lets work together</h3>
     <p>
       I help individuals, startups and large enterprises build out their
       products and meet ambitious deadlines.

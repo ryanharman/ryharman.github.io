@@ -11,4 +11,12 @@ const thoughts = defineCollection({
   }),
 });
 
-export const collections = { thoughts };
+const projects = defineCollection({
+  schema: z.object({
+    title: z.string(),
+    link: z.string().url(),
+    stack: z.string(),
+  }),
+});
+
+export const collections = { thoughts, projects };

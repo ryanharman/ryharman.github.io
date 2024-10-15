@@ -14,32 +14,6 @@ const { currentPage } = Astro.props;
 <html lang="en">
   <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-    <script>
-      (function (c, h, a, t, l, o, O, p) {
-        if (c._cl !== undefined) {
-          return;
-        }
-        c._clConfig = o;
-        o.account = t;
-        o.domain = l;
-        O = h.getElementsByTagName("head")[0];
-        p = h.createElement("script");
-        p.async = 1;
-        p.src = a;
-        p.type = "module";
-        O.appendChild(p);
-      })(
-        window,
-        document,
-        "https://sdk.staging.chatloop.app/chatloop-tag.js",
-        "018e9e40-04ee-71c3-bdf9-49cdd38db7d5",
-        {
-          id: "0191750e-8527-70ed-9852-8268f8ab2e3e",
-          domain: "ryanharman.dev",
-        },
-        []
-      );
-    </script>
   </head>
 
   <body
