@@ -17,27 +17,28 @@ const { currentPage } = Astro.props;
   </head>
 
   <body
-    class="bg-zinc-900 text-white max-w-2xl mx-auto antialiased font-sans py-8 md:px-0 px-6 space-y-16"
+    class="bg-black/95 text-white max-w-2xl mx-auto antialiased font-sans py-8 md:px-0 px-6 space-y-12"
   >
     <Header currentPage={currentPage} />
-    <article
-      class="space-y-3 relative after:w-full after:h-[1px] after:bg-white/50 after:absolute after:-bottom-8"
-    >
+    <article class="space-y-3 relative">
       <div class="flex">
-        <h1 class="font-bold text-3xl tracking-tight">Hey, I'm Ryan Harman</h1>
+        <h1 class="font-bold text-4xl tracking-tight text-zinc-300">
+          Hey, I'm <span class="text-white">Ryan Harman</span>
+        </h1>
         <div
           class="text-3xl ml-2 animate-[wiggle_1s_ease-in-out_infinite] w-fit"
         >
           👋
         </div>
       </div>
-      <p>
-        I'm a Software Engineer specialising in TypeScript applications built
-        with React and Node.js. <span class="font-medium text-zinc-200"
-          >I make solid, scalable products.</span
+      <p class="text-lg">
+        I'm a Software Engineer specialising in web technologies. <span
+          class="font-medium text-white"
+          >I build robust, scalable products with a focus on React, Node.js, and
+          AWS.</span
         >
       </p>
-      <p>
+      <p class="text-lg">
         You can find my code at <a
           class="border-b border-white/50 hover:border-white cursor-pointer text-white hover:transition-none transition-all"
           href="https://github.com/ryanharman"
@@ -51,8 +52,9 @@ const { currentPage } = Astro.props;
           href="mailto:me@ryanharman.dev">me@ryanharman.dev</a
         >
       </p>
+      <div class="w-full h-[1px] pt-6 border-b border-white/50"></div>
     </article>
-    <main class="space-y-16">
+    <main class="space-y-12">
       <slot />
     </main>
     <Footer />

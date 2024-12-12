@@ -1,0 +1,98 @@
+---
+import { getCollection } from "astro:content";
+import BaseHead from "../components/BaseHead.astro";
+import Footer from "../components/Footer.astro";
+import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
+import Header from "../components/Header.astro";
+
+const experience = await getCollection("experience");
+---
+
+<html lang="en">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body
+    class="bg-black/95 text-white max-w-2xl mx-auto antialiased font-sans py-8 md:px-0 px-6"
+  >
+    <Header currentPage="/cv" />
+    <div class="my-12">
+      <h2 class="font-mono lowercase text-zinc-400 my-4">experience</h2>
+      <div class="space-y-12">
+        {
+          experience
+            .sort(
+              (a, b) =>
+                // @ts-expect-error - it's a nightmare but it's ok for now
+                new Date(b.data["start-date"]) - new Date(a.data["start-date"])
+            )
+            .map(async (experience) => {
+              const { Content } = await experience.render();
+              return (
+                <div class="flex flex-col space-y-3 ">
+                  <div>
+                    <p class="text-white text-2xl font-bold">
+                      {experience.data.title}
+                    </p>
+                    <p class="font-mono text-sm max-w-prose">
+                      {experience.data.stack}
+                    </p>
+                  </div>
+                  <div class="flex gap-4 items-center font-medium">
+                    <a
+                      href={experience.data["company-link"]}
+                      target="_blank"
+                      referrerpolicy="no-referrer"
+                      class="text-base text-white border-b-2 border-transparent hover:border-white hover:border-b-2 hover:transition-none transition-all"
+                    >
+                      {experience.data.company}
+                    </a>
+                    <span class="tracking-[-0.3rem] text-zinc-500 font-mono text-lg">//</span>
+                    <p class="text-white">{experience.data.location}</p>
+                    <span class="tracking-[-0.3rem] text-zinc-500 font-mono text-lg">//</span>
+                    <div class="flex gap-1">
+                    <p class="text-white">{experience.data["start-date"]}</p>-
+                    <p class="text-white">{experience.data["end-date"]}</p>
+                    </div>
+                  </div>
+                  <!-- TODO: I must be using MDX wrong as this is horrible to do styling of nested items -->
+                  <div class="[&>p]:mb-3 [&>ul]:space-y-2 [&>ul]:pl-6 [&>ul]:list-disc [&>ul]:text-zinc-300">
+                    <Content />
+                  </div>
+                </div>
+              );
+            })
+        }
+      </div>
+    </div>
+    <div class="my-12">
+      <h3 class="font-mono lowercase text-zinc-400 my-4">
+        certifications & education
+      </h3>
+      <div class="space-y-3">
+        <p class="text-white font-medium">
+          City & Guilds - <span class="font-normal text-sm"
+            >Level 4 Distinction in Software Development & Software Development
+            Methodologies.</span
+          >
+        </p>
+        <p class="text-white font-medium">
+          AWS Cloud Practitioner - <span class="font-normal text-sm"
+            >AWS cloud fluency and foundational knowledge.</span
+          >
+        </p>
+        <p class="text-white font-medium">
+          MTA - <span class="font-normal text-sm"
+            >HTML5 Application Development Fundamentals.</span
+          >
+        </p>
+        <p class="text-white font-medium">
+          FreeCodeCamp - <span class="font-normal text-sm"
+            >Responsive Web Design.</span
+          >
+        </p>
+      </div>
+    </div>
+    <Footer />
+  </body>
+</html>
