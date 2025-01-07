@@ -10,7 +10,7 @@ const defaultClasses =
   "hover:text-primary cursor-pointer py-1 px-1 hover:transition-none transition-all font-mono leading-tight";
 ---
 
-<header>
+<header class="flex gap-4 items-center justify-between">
   <nav>
     <ul class="flex gap-6">
       <li>
@@ -55,4 +55,5 @@ const defaultClasses =
       </li>
     </ul>
   </nav>
+  <slot />
 </header>
