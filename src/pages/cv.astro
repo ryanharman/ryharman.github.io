@@ -17,7 +17,18 @@ const experience = await getCollection("experience");
   >
     <Header currentPage="/cv" />
     <div class="my-12">
-      <h2 class="font-mono lowercase text-zinc-400 my-4">experience</h2>
+      <div class="mb-12">
+        <h2 class="font-mono lowercase text-zinc-400 my-4">bio</h2>
+        <p class="text-white">I’m a goal and detail oriented Software Engineer with 7 years of commercial experience spanning across multiple sectors.</p>
+        <p class="text-white">
+          I have a passion for creating excellent software experiences on the web and mobile.
+        </p>
+        <p class="text-white">
+          I’m a social individual capable of working in a team, paired with a
+          colleague or independently for internal or external customers.
+        </p>
+      </div>
+      <h3 class="font-mono lowercase text-zinc-400 my-4">experience</h2>
       <div class="space-y-12">
         {
           experience
@@ -38,21 +49,23 @@ const experience = await getCollection("experience");
                       {experience.data.stack}
                     </p>
                   </div>
-                  <div class="flex gap-4 items-center font-medium">
-                    <a
-                      href={experience.data["company-link"]}
-                      target="_blank"
-                      referrerpolicy="no-referrer"
-                      class="text-base text-white border-b-2 border-transparent hover:border-white hover:border-b-2 hover:transition-none transition-all"
-                    >
-                      {experience.data.company}
-                    </a>
-                    <span class="tracking-[-0.3rem] text-zinc-500 font-mono text-lg">//</span>
-                    <p class="text-white">{experience.data.location}</p>
-                    <span class="tracking-[-0.3rem] text-zinc-500 font-mono text-lg">//</span>
+                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-1 sm:gap-4 items-center w-fit font-medium">
+                    <div class="flex gap-4 items-center">
+                      <a
+                        href={experience.data["company-link"]}
+                        target="_blank"
+                        referrerpolicy="no-referrer"
+                        class="text-base text-white border-b-2 border-transparent hover:border-white hover:border-b-2 hover:transition-none transition-all"
+                      >
+                        {experience.data.company}
+                      </a>
+                      <span class="tracking-[-0.3rem] text-zinc-500 font-mono text-lg">//</span>
+                      <p class="text-white">{experience.data.location}</p>
+                      <span class="hidden sm:block tracking-[-0.3rem] text-zinc-500 font-mono text-lg">//</span>
+                    </div>
                     <div class="flex gap-1">
-                    <p class="text-white">{experience.data["start-date"]}</p>-
-                    <p class="text-white">{experience.data["end-date"]}</p>
+                      <p class="text-white">{experience.data["start-date"]}</p>-
+                      <p class="text-white">{experience.data["end-date"]}</p>
                     </div>
                   </div>
                   <!-- TODO: I must be using MDX wrong as this is horrible to do styling of nested items -->
@@ -66,7 +79,7 @@ const experience = await getCollection("experience");
       </div>
     </div>
     <div class="my-12">
-      <h3 class="font-mono lowercase text-zinc-400 my-4">
+      <h4 class="font-mono lowercase text-zinc-400 my-4">
         certifications & education
       </h3>
       <div class="space-y-3">
