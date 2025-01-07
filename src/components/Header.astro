@@ -5,9 +5,9 @@ type Props = {
 
 const { currentPage } = Astro.props;
 
-const activeClasses = "border-b border-zinc-400/50 text-white";
+const activeClasses = "border-b border-tertiary/50 text-primary";
 const defaultClasses =
-  "hover:text-white cursor-pointer py-1 px-1 hover:transition-none transition-all font-mono leading-tight";
+  "hover:text-primary cursor-pointer py-1 px-1 hover:transition-none transition-all font-mono leading-tight";
 ---
 
 <header>
@@ -17,7 +17,7 @@ const defaultClasses =
         <a
           class={currentPage === "/"
             ? `${activeClasses} ${defaultClasses}`
-            : `${defaultClasses} text-zinc-300`}
+            : `${defaultClasses} text-secondary`}
           href="/"
         >
           home</a
@@ -27,7 +27,7 @@ const defaultClasses =
         <a
           class={currentPage === "/about"
             ? `${activeClasses} ${defaultClasses}`
-            : `${defaultClasses} text-zinc-300`}
+            : `${defaultClasses} text-secondary`}
           href="/about"
         >
           about</a
@@ -37,7 +37,7 @@ const defaultClasses =
         <a
           class={currentPage === "/thoughts"
             ? `${activeClasses} ${defaultClasses}`
-            : `${defaultClasses} text-zinc-300`}
+            : `${defaultClasses} text-secondary`}
           href="/thoughts"
         >
           thoughts</a
@@ -47,7 +47,7 @@ const defaultClasses =
         <a
           class={currentPage === "/cv"
             ? `${activeClasses} ${defaultClasses}`
-            : `${defaultClasses} text-zinc-300`}
+            : `${defaultClasses} text-secondary`}
           href="/cv"
         >
           cv</a

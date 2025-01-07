@@ -5,11 +5,35 @@ import Footer from "../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 
 type Props = {
-  currentPage: "/" | "/about" | "/thoughts";
+  currentPage: "/" | "/about" | "/thoughts" | "/cv";
+  hideAboutMeArticle?: boolean;
 };
 
-const { currentPage } = Astro.props;
+const { currentPage, hideAboutMeArticle } = Astro.props;
 ---
+
+<script>
+  function fetchTheme() {
+    if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
+      return localStorage.getItem("theme");
+    }
+    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+      return "dark";
+    }
+    return "light";
+  }
+
+  const updateTheme = (newTheme: "light" | "dark" | null = null) => {
+    const theme = newTheme ?? fetchTheme();
+    const body = document.getElementById("body");
+
+    if (theme === "light") {
+      body?.setAttribute("data-theme", "light");
+    } else {
+      body?.setAttribute("data-theme", "dark");
+    }
+  };
+</script>
 
 <html lang="en">
   <head>
@@ -17,43 +41,58 @@ const { currentPage } = Astro.props;
   </head>
 
   <body
-    class="bg-black/95 text-white max-w-2xl mx-auto antialiased font-sans py-8 md:px-0 px-6 space-y-12"
+    id="body"
+    data-theme="light"
+    class="transition-all bg-background/95 text-primary max-w-2xl mx-auto antialiased font-sans py-8 md:px-0 px-6 space-y-12"
   >
     <Header currentPage={currentPage} />
-    <article class="space-y-3 relative">
-      <div class="flex">
-        <h1 class="font-bold text-4xl tracking-tight text-zinc-300">
-          Hey, I'm <span class="text-white">Ryan Harman</span>
-        </h1>
-        <div
-          class="text-3xl ml-2 animate-[wiggle_1s_ease-in-out_infinite] w-fit"
-        >
-          👋
-        </div>
-      </div>
-      <p class="text-lg">
-        I'm a Software Engineer specialising in web technologies. <span
-          class="font-medium text-white"
-          >I build robust, scalable products with a focus on React, Node.js, and
-          AWS.</span
-        >
-      </p>
-      <p class="text-lg">
-        You can find my code at <a
-          class="border-b border-white/50 hover:border-white cursor-pointer text-white hover:transition-none transition-all"
-          href="https://github.com/ryanharman"
-          target="_blank">GitHub</a
-        > or get in touch via <a
-          class="border-b border-white/50 hover:border-white cursor-pointer text-white hover:transition-none transition-all"
-          href="https://www.linkedin.com/in/ryan-harman63/"
-          target="_blank">LinkedIn</a
-        > or <a
-          class="border-b border-white/50 hover:border-white cursor-pointer text-white hover:transition-none transition-all"
-          href="mailto:me@ryanharman.dev">me@ryanharman.dev</a
-        >
-      </p>
-      <div class="w-full h-[1px] pt-6 border-b border-white/50"></div>
-    </article>
+    {
+      !hideAboutMeArticle && (
+        <article class="space-y-3 relative">
+          <div class="flex">
+            <h1 class="font-bold text-4xl tracking-tight text-secondary">
+              Hey, I'm <span class="text-primary">Ryan Harman</span>
+            </h1>
+            <div class="text-3xl ml-2 animate-[wiggle_1s_ease-in-out_infinite] w-fit">
+              👋
+            </div>
+          </div>
+          <p class="text-lg text-secondary">
+            I'm a Software Engineer specialising in web technologies.{" "}
+            <span class="font-medium text-primary">
+              I build robust, scalable products with a focus on React, Node.js,
+              and AWS.
+            </span>
+          </p>
+          <p class="text-lg">
+            You can find my code at{" "}
+            <a
+              class="border-b border-primary/50 hover:border-primary cursor-pointer text-primary hover:transition-none transition-all"
+              href="https://github.com/ryanharman"
+              target="_blank"
+            >
+              GitHub
+            </a>{" "}
+            or get in touch via{" "}
+            <a
+              class="border-b border-primary/50 hover:border-primary cursor-pointer text-primary hover:transition-none transition-all"
+              href="https://www.linkedin.com/in/ryan-harman63/"
+              target="_blank"
+            >
+              LinkedIn
+            </a>{" "}
+            or{" "}
+            <a
+              class="border-b border-primary/50 hover:border-primary cursor-pointer text-primary hover:transition-none transition-all"
+              href="mailto:me@ryanharman.dev"
+            >
+              me@ryanharman.dev
+            </a>
+          </p>
+          <div class="w-full h-[1px] pt-6 border-b border-primary/50" />
+        </article>
+      )
+    }
     <main class="space-y-12">
       <slot />
     </main>
