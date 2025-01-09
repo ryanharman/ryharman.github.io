@@ -4,9 +4,9 @@ import { getCollection } from "astro:content";
 const experience = await getCollection("experience");
 ---
 
-    <div class="my-12">
-      <div class="mb-12">
-        <h2 class="font-mono lowercase text-tertiary my-4">bio</h2>
+    <div class="mb-6">
+      <div class="mb-6">
+        <h2 class="font-mono lowercase text-tertiary mb-4">bio</h2>
         <p class="text-primary">I’m a goal and detail oriented Software Engineer with 7 years of commercial experience spanning across multiple sectors.</p>
         <p class="text-primary">
           I have a passion for creating excellent software experiences on the web and mobile.
@@ -17,9 +17,10 @@ const experience = await getCollection("experience");
         </p>
       </div>
       <h3 class="font-mono lowercase text-tertiary my-4">experience</h2>
-      <div class="space-y-12">
+      <div class="space-y-6">
         {
           experience
+          .filter((e) => e.id !== 'bentley-motors-factory.mdx')
             .sort(
               (a, b) =>
                 // @ts-expect-error - it's a nightmare but it's ok for now

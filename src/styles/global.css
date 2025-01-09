@@ -22,3 +22,18 @@
 		@apply inline-block;
 	}
 }
+
+/* This is to allow us to scale the font-sizes of the PDF down to a size that allows us */
+/* to fit more content on a single page. Whilst still maintaining the Tailwind CSS font scaling */
+.pdf-font-size-scaler {
+	.text-2xl {
+		font-size: 1.3rem !important;
+	}
+	.text-lg {
+		font-size: 0.95rem !important;
+	}
+	.text-sm {
+		font-size: 0.75rem !important;
+	}
+	font-size: 0.9rem !important;
+}

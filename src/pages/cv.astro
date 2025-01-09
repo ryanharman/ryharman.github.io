@@ -1,7 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import CvForExport from "../components/CvForExport.astro";
-import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
 ---
 
 <script>
@@ -33,6 +32,14 @@ import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
       y: 0,
       width: 400,
       windowWidth: 675,
+      html2canvas: {
+        letterRendering: true,
+        onclone: (doc) => {
+          doc
+            .getElementsByTagName("body")[0]
+            ?.classList.add("pdf-font-size-scaler");
+        },
+      },
       callback: (doc) => {
         doc.save("ryan_harman_cv.pdf");
       },
@@ -44,6 +51,10 @@ import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
 </script>
 
 <Layout currentPage="/cv" hideAboutMeArticle={true}>
+  <span class="font-mono text-sm"
+    >the cv export isn't perfect on windows right now, or if you have
+    accessibility scaling, get in touch if it doesn't look right!</span
+  >
   <CvForExport />
   <button
     id="download-btn"
