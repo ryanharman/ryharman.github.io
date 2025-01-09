@@ -19,11 +19,6 @@ import CvForExport from "../components/CvForExport.astro";
       return;
     }
 
-    const myFont = "/fonts/Inter.ttf";
-    pdf.addFileToVFS("Inter.ttf", myFont);
-    pdf.addFont(myFont, "Inter", "normal");
-    pdf.setFont("Inter");
-
     pdf.html(pdfContent, {
       filename: "ryan_harman_cv.pdf",
       margin: 15,
