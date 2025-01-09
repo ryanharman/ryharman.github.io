@@ -93,7 +93,7 @@ const { currentPage, hideAboutMeArticle } = Astro.props;
       !hideAboutMeArticle && (
         <article class="space-y-3 relative">
           <div class="flex">
-            <h1 class="font-bold text-4xl tracking-tight text-secondary">
+            <h1 class="mb-4 font-bold text-4xl tracking-tight text-secondary">
               Hey, I'm <span class="text-primary">Ryan Harman</span>
             </h1>
             <div class="text-3xl ml-2 animate-[wiggle_1s_ease-in-out_infinite] w-fit">
@@ -108,15 +108,17 @@ const { currentPage, hideAboutMeArticle } = Astro.props;
             </span>
           </p>
           <p class="text-lg">
-            You can find my code at{" "}
+            You can find my projects on{" "}
             <a
               class="border-b border-primary/50 hover:border-primary cursor-pointer text-primary hover:transition-none transition-all"
               href="https://github.com/ryanharman"
               target="_blank"
             >
-              GitHub
-            </a>{" "}
-            or get in touch via{" "}
+              GitHub.
+            </a>
+</p>
+<p class="text-lg">
+            Want to chat? Connect with me on{" "}
             <a
               class="border-b border-primary/50 hover:border-primary cursor-pointer text-primary hover:transition-none transition-all"
               href="https://www.linkedin.com/in/ryan-harman63/"
@@ -124,7 +126,7 @@ const { currentPage, hideAboutMeArticle } = Astro.props;
             >
               LinkedIn
             </a>{" "}
-            or{" "}
+            or get in touch via{" "}
             <a
               class="border-b border-primary/50 hover:border-primary cursor-pointer text-primary hover:transition-none transition-all"
               href="mailto:me@ryanharman.dev"
