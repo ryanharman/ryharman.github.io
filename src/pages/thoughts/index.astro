@@ -1,11 +1,11 @@
 ---
-// import { getCollection } from "astro:content";
+import { getCollection } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
-// import FormattedDate from "../../components/FormattedDate.astro";
+import FormattedDate from "../../components/FormattedDate.astro";
 
-// const posts = (await getCollection("thoughts")).sort(
-//   (a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
-// );
+const posts = (await getCollection("thoughts")).sort(
+  (a, b) => a.data.publishedAt.valueOf() - b.data.publishedAt.valueOf()
+);
 ---
 
 <Layout currentPage="/thoughts">
@@ -14,7 +14,7 @@ import Layout from "../../layouts/Layout.astro";
     <h3 class="tracking-tight font-medium text-tertiary">
       No posts yet. Maybe check another time
     </h3>
-    <!-- <ul class="space-y-2">
+    <ul class="space-y-2">
       {
         posts.length === 0 ? (
           <li>
@@ -24,22 +24,19 @@ import Layout from "../../layouts/Layout.astro";
           </li>
         ) : (
           posts.map((post) => (
-            <li>
-              <a
-                class="group grid grid-cols-6"
-                href={`/thoughts/${post.slug}/`}
-              >
+            <li class="flex justify-between items-center gap-4 py-2">
+              <a href={`/thoughts/${post.slug}/`}>
                 <h4 class="tracking-tight font-medium col-span-3 group-hover:underline">
                   {post.data.title}
                 </h4>
-                <p>
-                  <FormattedDate date={post.data.pubDate} />
-                </p>
               </a>
+              <p>
+                <FormattedDate date={post.data.publishedAt} />
+              </p>
             </li>
           ))
         )
       }
-    </ul> -->
+    </ul>
   </section>
 </Layout>

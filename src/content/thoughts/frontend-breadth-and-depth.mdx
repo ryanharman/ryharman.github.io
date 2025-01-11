@@ -1,5 +1,48 @@
 ---
-title: "Frontend breadth and depth"
-description: "A short thought dump on recent frontend development experiences"
+title: "The breadth and depth of modern frontend development"
+description: "Reflections of my experiences with frontend development - a thought dump"
+tags: ['chatloop', 'frontend']
 publishedAt: "05 December 2024"
 ---
+
+Frontend development has changed since I started programming. You can't just turn up with some HTML, CSS and basic jQuery knowledge and apps that *actually* meet customer expectations. Marketing sites and landing pages are only the tip of the iceberg for the average web developer now.
+
+Before getting into frontend development I was writing scripts for my day job. After moving departments I got into SharePoint development, where I spent my a fair amount of time writing jQuery selectors and messing about with DOM manipulation. Lots of .find() and .closest() calls, manually updating elements, that sort of thing.
+
+Shortly into this role, I started using React. This was something I was eager to learn, I'd been testing it out in my own projects for a while, had friends who used it, but getting the chance to use it in my job and learn from more senior react engineers was a blessing. 
+
+Instead of thinking "right, how do I grab this element and update it?", I had to start thinking in components and state, and for a long while my knowledge of DOM selectors and more native API's became useless and a thing of the past.
+
+It's one thing to pick up a new library, plug and play style, and it all works nicely. But modern frontend development has a whole other challenge of encouraging you to shift your mental model when picking up new tech such as React, Solid, Svelte or any modern framework (assuming you're coming from a background like mine).
+
+<h3 class="text-primary text-xl font-medium pt-6 mb-4">What modern frontend actually looks like</h3>
+
+Working with React and React Native, the complexity of what we're building is quite intense. You've got to juggle so many different areas to ship anything meaningful.
+
+Let me break down what I mean:
+The foundation is understanding the core stuff. It's not just about knowing React - you need to properly understand JavaScript (and now TypeScript), how the browser works, and all that. But that's just your starting point.
+
+Take what I'm working on now at Chatloop - we've got a React Native app, a web portal, and an SDK that lets other sites embed our product. Each one of these needs different approaches:
+
+For the React Native app, you're dealing with platform-specific behaviour, navigation stacks, and making sure your UI components work consistently across iOS and Android. It's somewhat similar to browser specific styling or functionality, but for the most part that's all standardised and easy to solve, especially with Chromium being the largest player in browser runtimes. There's no such thing between iOS and Android, the bridge exists within React Native and your codebase.
+
+The SDK has been the most humbling project so far. Because of the nature of using iframes, and integrating into customer sites, before we get into scaffolding our miniature React apps, we have to actually use native DOM and browser API's! It's almost like I've gone full circle and the hard part now was remembering stuff I used to excel at.
+
+On the web app (our portal) side, you can't just throw some API calls in your components and call it done. You need to think about:
+* How to structure your data fetching so that it's performant and accessible in the right areas of the app
+* Setting up proper caching both in the browsers network requests and in memory
+* Making sure your bundle sizes don't get out of hand (let's not get into Webpack, Vite, and bundlers here)
+* Building components that actually scale well and perform under heavy load and use, but are also consistently styled across all the products
+
+And these are just some of the questions you have to think about when architecting a solution.
+
+<h4 class="text-primary text-xl font-medium pt-6 mb-4">There cant be more, can there?</h4>
+
+I learned this the hard way when working on some client projects. You start simple, but before you know it you're diving into Node.js to build backend services that better support your frontend applications needs, or you're knee-deep in AWS trying to figure out why your CloudFront distribution isn't caching properly.
+
+That Node.js backend? It starts as a data transformation layer. Doing that on the client would add even more complexity and performance implications for us. Where does the data come from you ask? Oh, right, it's the legacy PHP API that has been running for 10 years, and no it's not fast, so lets add plenty of caching in and around our solution so that the user doesn't take the hit of our technical debt. And so on so forth.
+
+<h5 class="text-primary text-xl font-medium pt-6 mb-4">To finalise things</h5>
+
+It turns out frontend development has a way of keeping you on your toes. Just when you think you've got it figured out, there’s always something new to learn or a challenge that pushes you in a different direction. And honestly, that’s part of what makes it exciting. Whether you’re navigating legacy systems, diving into backend work, or solving tricky frontend bugs, every step is another chance to grow and build better products. It’s not always smooth sailing, but it’s definitely a journey worth taking.
+

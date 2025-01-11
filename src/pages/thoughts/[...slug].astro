@@ -16,5 +16,9 @@ const { Content } = await post.render();
 ---
 
 <BlogPost {...post.data}>
-  <Content />
+  <article
+    class="[&>ul]:list-disc [&>ul]:pl-6 text-secondary max-w-prose space-y-4"
+  >
+    <Content />
+  </article>
 </BlogPost>
