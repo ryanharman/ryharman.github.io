@@ -20,18 +20,24 @@ const posts = (await getCollection("thoughts")).sort(
             </h3>
           </li>
         ) : (
-          posts.map((post) => (
-            <li class="flex justify-between items-center gap-4 py-2">
-              <a class="hover:underline" href={`/thoughts/${post.slug}/`}>
-                <h4 class="tracking-tight font-medium col-span-3 group-hover:underline">
-                  {post.data.title}
-                </h4>
-              </a>
-              <p>
-                <FormattedDate date={post.data.publishedAt} />
-              </p>
-            </li>
-          ))
+          posts
+            .sort((p) => p.data.publishedAt.valueOf())
+            .reverse()
+            .map((post) => (
+              <li class="flex justify-between gap-4 py-2">
+                <a
+                  class="col-span-2 hover:underline"
+                  href={`/thoughts/${post.slug}/`}
+                >
+                  <h4 class="tracking-tight font-medium col-span-3 group-hover:underline">
+                    {post.data.title}
+                  </h4>
+                </a>
+                <p class="text-right whitespace-nowrap">
+                  <FormattedDate date={post.data.publishedAt} />
+                </p>
+              </li>
+            ))
         )
       }
     </ul>

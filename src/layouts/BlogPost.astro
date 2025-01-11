@@ -10,13 +10,15 @@ const { title, description, publishedAt } = Astro.props;
 
 <Layout currentPage="/thoughts">
   <div>
-    <div class="flex justify-between items-start gap-4 mb-4">
-      <div>
+    <div class="flex justify-between gap-4 mb-2">
+      <div class="col-span-2">
         <h2 class="text-primary text-2xl font-medium mb-2">{title}</h2>
-        <p class="text-secondary">{description}</p>
       </div>
-      <FormattedDate date={publishedAt} />
+      <p class="mt-2 text-right whitespace-nowrap">
+        <FormattedDate date={publishedAt} />
+      </p>
     </div>
+    <p class="text-secondary">{description}</p>
   </div>
   <slot />
 </Layout>
