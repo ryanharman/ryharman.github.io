@@ -56,7 +56,7 @@ const { currentPage, hideAboutMeArticle } = Astro.props;
     class="transition-all bg-background/95 text-primary max-w-2xl mx-auto antialiased font-sans py-8 md:px-0 px-6 space-y-12"
   >
     <Header currentPage={currentPage}>
-      <button id="themeToggle">
+      <button aria-label="Toggle theme" id="themeToggle">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="18"
@@ -116,8 +116,8 @@ const { currentPage, hideAboutMeArticle } = Astro.props;
             >
               GitHub.
             </a>
-</p>
-<p class="text-lg">
+          </p>
+          <p class="text-lg">
             Want to chat? Connect with me on{" "}
             <a
               class="border-b border-primary/50 hover:border-primary cursor-pointer text-primary hover:transition-none transition-all"
