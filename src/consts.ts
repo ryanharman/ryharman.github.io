@@ -1,3 +1,5 @@
-export const SITE_TITLE = "Ryan Harman - Software Engineer";
-export const SITE_DESCRIPTION =
-  "An experienced React & Node.js fullstack developer. I make solid, scalable products for both web and mobile.";
+export const SITE_TITLE =
+	"Ryan Harman - Software Engineer / Frontend Developer | Manchester | UK";
+
+const yoe = new Date().getFullYear() - 2018;
+export const SITE_DESCRIPTION = `A Software Engineer specialising in web technologies with ${yoe} years experience. I work with enterprises, startups and small businesses to build robust, scalable products`;
