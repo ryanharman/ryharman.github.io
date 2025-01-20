@@ -1,10 +1,10 @@
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 import cloudflare from "@astrojs/cloudflare";
+import tailwind from "@astrojs/tailwind";
 import { defineConfig } from "astro/config";
 import { parseArgs } from "node:util";
-
-import tailwind from "@astrojs/tailwind";
+import { loadEnv } from "vite";
 
 const {
   values: { mode },
